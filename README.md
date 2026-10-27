@@ -26,3 +26,7 @@ pnpm start
 Run the TypeScript check with `pnpm lint`.
 
 The App Router pages and metadata are in `src/app`; shared UI components are in `src/components`.
+
+## Performance monitoring
+
+Vercel Speed Insights is included in the root layout for all pages. Enable Speed Insights in the Vercel project dashboard and deploy the app to collect real-user Core Web Vitals. Results appear in the project's Speed Insights tab after visitors use the deployed site; this is not an on-demand speed test.

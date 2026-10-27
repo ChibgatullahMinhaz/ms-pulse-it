@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { LocaleProvider } from '@/context/LocaleContext';
 import './globals.css';
 
@@ -157,6 +158,7 @@ export default function RootLayout({
       </head>
       <body className="bg-slate-50 text-slate-800 antialiased selection:bg-[#00D2FF]/20 selection:text-slate-900">
         <LocaleProvider>{children}</LocaleProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
