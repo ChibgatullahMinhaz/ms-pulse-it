@@ -1,0 +1,148 @@
+'use client';
+
+import { PulseLogo } from './PulseLogo';
+import { NewsletterSubscription } from './NewsletterSubscription';
+import { ArrowUpRight } from 'lucide-react';
+
+export function Footer({ onOpenConsultation }: { onOpenConsultation: () => void }) {
+  return (
+    <footer className="bg-white border-t border-slate-200/80 pt-16 pb-12 text-slate-600">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* AI-Driven Insights Newsletter Subscription Card */}
+        <NewsletterSubscription />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-100">
+          {/* Brand Column (2 cols) */}
+          <div className="lg:col-span-2 space-y-4">
+            <a href="#" className="inline-block" aria-label="MS Pulse IT Home">
+              <PulseLogo size="md" />
+            </a>
+            <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
+              MS Pulse IT is a premier enterprise IT agency specializing in Next-Gen Software Engineering, App Store Optimization (ASO), Cloud Architecture, and AI-driven scalable solutions.
+            </p>
+            <div className="flex items-center gap-2 text-xs text-slate-500 pt-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+              <span>All Systems Operational</span>
+              <span className="text-slate-300">·</span>
+              <span className="font-mono text-[11px]">Pulse Latency: 14ms</span>
+            </div>
+          </div>
+
+          {/* Column: Capabilities */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              Capabilities
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <a href="#services" className="hover:text-[#00BBE6] transition-colors">
+                  App Store Optimization (ASO)
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-[#00BBE6] transition-colors">
+                  Next.js Enterprise Web
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-[#00BBE6] transition-colors">
+                  Zero-Trust DevSecOps
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-[#00BBE6] transition-colors">
+                  Real-time Telemetry & Data
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-[#00BBE6] transition-colors">
+                  Universal Deep Linking
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column: Engineering & Lab */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              Engineering Lab
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <a href="#tech-stack" className="hover:text-[#00BBE6] transition-colors">
+                  Core Tech Stack
+                </a>
+              </li>
+              <li>
+                <a href="#featured-lab" className="hover:text-[#00BBE6] transition-colors">
+                  Featured Lab & Demos
+                </a>
+              </li>
+              <li>
+                <a href="#app-seo" className="hover:text-[#00BBE6] transition-colors">
+                  App-SEO Simulator
+                </a>
+              </li>
+              <li>
+                <a href="#architecture" className="hover:text-[#00BBE6] transition-colors">
+                  5-Tier Architecture
+                </a>
+              </li>
+              <li>
+                <a href="#tech-insights" className="hover:text-[#00BBE6] transition-colors">
+                  Tech Insights & Blog
+                </a>
+              </li>
+              <li>
+                <a href="#team" className="hover:text-[#00BBE6] transition-colors">
+                  Pulse Engineering Team
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-[#00BBE6] transition-colors">
+                  Expertise FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#estimator" className="hover:text-[#00BBE6] transition-colors">
+                  Scope Calculator
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column: Contact & Actions */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              Engagement
+            </h4>
+            <p className="text-xs text-slate-500">
+              Ready to engineer your digital infrastructure for sub-second velocity?
+            </p>
+            <button
+              onClick={onOpenConsultation}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-colors shadow-sm"
+            >
+              <span>Schedule Consultation</span>
+              <ArrowUpRight className="w-3 h-3 text-[#00D2FF]" />
+            </button>
+            <div className="text-[11px] text-slate-400 pt-1">
+              Direct inquiries: <a href="mailto:contact@mspulseit.com" className="hover:underline">contact@mspulseit.com</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+          <p>© {new Date().getFullYear()} MS Pulse IT Corporation. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="hover:text-slate-600 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-600 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-slate-600 transition-colors">Security Whitepaper</a>
+            <a href="#" className="hover:text-slate-600 transition-colors">Schema JSON-LD</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
