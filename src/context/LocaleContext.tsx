@@ -64,17 +64,18 @@ interface LocaleContextType {
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
+  const [locale, setLocaleState] = useState<Locale>('en');
+
+  useEffect(() => {
     try {
       const saved = localStorage.getItem('mspulse_locale');
       if (saved === 'de' || saved === 'fr' || saved === 'en') {
-        return saved;
+        setLocaleState(saved);
       }
     } catch {
-      // Fallback if localStorage unavailable
+      // Keep the server-rendered locale if localStorage is unavailable.
     }
-    return 'en';
-  });
+  }, []);
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);

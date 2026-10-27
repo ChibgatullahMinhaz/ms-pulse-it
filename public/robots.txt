@@ -1,6 +1,0 @@
-# Robots.txt for MS Pulse IT Enterprise Platform
-User-agent: *
-Allow: /
-
-# Sitemaps
-Sitemap: https://mspulseit.com/sitemap.xml

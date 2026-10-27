@@ -1,20 +1,28 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# MS Pulse IT
 
-# Run and deploy your AI Studio app
+The MS Pulse IT website is built with Next.js 16 App Router, React, TypeScript, and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+## Requirements
 
-View your app in AI Studio: https://ai.studio/apps/c56bbb47-3402-4c7b-a9e9-b5a8eb5adc2c
+- Node.js 20.9 or newer
+- pnpm
 
-## Run Locally
+## Development
 
-**Prerequisites:**  Node.js
+```bash
+pnpm install
+pnpm dev
+```
 
+Open [http://localhost:3000](http://localhost:3000).
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Production
+
+```bash
+pnpm build
+pnpm start
+```
+
+Run the TypeScript check with `pnpm lint`.
+
+The App Router pages and metadata are in `src/app`; shared UI components are in `src/components`.
