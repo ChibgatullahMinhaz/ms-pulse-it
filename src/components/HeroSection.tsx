@@ -2,6 +2,7 @@
 
 import { ArrowRight, Sparkles, ShieldCheck, Gauge, TrendingUp, Smartphone } from 'lucide-react';
 import { ParticleCanvas } from './ParticleCanvas';
+import { Tilt3D } from './Tilt3D';
 
 interface HeroSectionProps {
   onOpenConsultation: () => void;
@@ -13,6 +14,13 @@ export function HeroSection({ onOpenConsultation, onViewCaseStudy }: HeroSection
     <section id="hero" className="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-[#F7F9FC]">
       {/* Interactive Digital Particle Canvas */}
       <ParticleCanvas />
+
+      {/* Ambient Floating 3D Orbs */}
+      <div className="absolute inset-0 perspective-3d pointer-events-none" aria-hidden="true">
+        <div className="absolute top-[14%] left-[6%] w-40 h-40 orb-3d animate-float-3d opacity-70 hidden md:block" />
+        <div className="absolute bottom-[18%] right-[7%] w-56 h-56 orb-3d animate-float-3d-alt opacity-60 hidden md:block" />
+        <div className="absolute top-[38%] right-[16%] w-20 h-20 orb-3d animate-float-3d opacity-50 hidden lg:block" style={{ animationDelay: '-3s' }} />
+      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Subtle Brand Tagline */}
@@ -55,42 +63,50 @@ export function HeroSection({ onOpenConsultation, onViewCaseStudy }: HeroSection
 
         {/* Claim-to-Proof Quantitative Adjacency Bar */}
         <div className="mt-16 pt-8 border-t border-slate-200/70 max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
-            <div className="neu-raised-sm rounded-xl p-4 transition-transform hover:-translate-y-0.5">
-              <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
-                <Gauge className="w-3.5 h-3.5 text-[#00D2FF]" />
-                <span>Performance Target</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-left perspective-3d">
+            <Tilt3D maxTilt={7} className="rounded-xl">
+              <div className="neu-raised-sm rounded-xl p-4 h-full">
+                <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
+                  <Gauge className="w-3.5 h-3.5 text-[#00D2FF]" />
+                  <span>Performance Target</span>
+                </div>
+                <div className="text-2xl font-bold font-mono-num text-[#1A1D21]">&lt;1s</div>
+                <p className="text-[11px] text-slate-500 mt-0.5">Page load on every build</p>
               </div>
-              <div className="text-2xl font-bold font-mono-num text-[#1A1D21]">&lt;1s</div>
-              <p className="text-[11px] text-slate-500 mt-0.5">Page load on every build</p>
-            </div>
+            </Tilt3D>
 
-            <div className="neu-raised-sm rounded-xl p-4 transition-transform hover:-translate-y-0.5">
-              <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
-                <TrendingUp className="w-3.5 h-3.5 text-[#6C5CE7]" />
-                <span>Products Shipped</span>
+            <Tilt3D maxTilt={7} className="rounded-xl">
+              <div className="neu-raised-sm rounded-xl p-4 h-full">
+                <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
+                  <TrendingUp className="w-3.5 h-3.5 text-[#6C5CE7]" />
+                  <span>Products Shipped</span>
+                </div>
+                <div className="text-2xl font-bold font-mono-num text-[#1A1D21]">2 In-House</div>
+                <p className="text-[11px] text-slate-500 mt-0.5">Marketplace + live media engine</p>
               </div>
-              <div className="text-2xl font-bold font-mono-num text-[#1A1D21]">2 In-House</div>
-              <p className="text-[11px] text-slate-500 mt-0.5">Marketplace + live media engine</p>
-            </div>
+            </Tilt3D>
 
-            <div className="neu-raised-sm rounded-xl p-4 transition-transform hover:-translate-y-0.5">
-              <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
-                <Smartphone className="w-3.5 h-3.5 text-[#00D2FF]" />
-                <span>Delivery Model</span>
+            <Tilt3D maxTilt={7} className="rounded-xl">
+              <div className="neu-raised-sm rounded-xl p-4 h-full">
+                <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
+                  <Smartphone className="w-3.5 h-3.5 text-[#00D2FF]" />
+                  <span>Delivery Model</span>
+                </div>
+                <div className="text-2xl font-bold font-mono-num text-[#1A1D21]">2-Week</div>
+                <p className="text-[11px] text-slate-500 mt-0.5">Verifiable sprint releases</p>
               </div>
-              <div className="text-2xl font-bold font-mono-num text-[#1A1D21]">2-Week</div>
-              <p className="text-[11px] text-slate-500 mt-0.5">Verifiable sprint releases</p>
-            </div>
+            </Tilt3D>
 
-            <div className="neu-raised-sm rounded-xl p-4 transition-transform hover:-translate-y-0.5">
-              <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#6C5CE7]" />
-                <span>IP & Ownership</span>
+            <Tilt3D maxTilt={7} className="rounded-xl">
+              <div className="neu-raised-sm rounded-xl p-4 h-full">
+                <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#6C5CE7]" />
+                  <span>IP & Ownership</span>
+                </div>
+                <div className="text-2xl font-bold text-[#1A1D21]">100% Yours</div>
+                <p className="text-[11px] text-slate-500 mt-0.5">Full source code handover</p>
               </div>
-              <div className="text-2xl font-bold text-[#1A1D21]">100% Yours</div>
-              <p className="text-[11px] text-slate-500 mt-0.5">Full source code handover</p>
-            </div>
+            </Tilt3D>
           </div>
         </div>
       </div>

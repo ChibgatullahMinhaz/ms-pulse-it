@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Building2, Globe, Smartphone, Monitor, Radio, ShoppingCart, ArrowRight, CheckCircle2, X } from 'lucide-react';
 import { ServiceItem } from '../types';
+import { Tilt3D } from './Tilt3D';
 
 const SERVICES: ServiceItem[] = [
   {
@@ -130,7 +131,7 @@ const SERVICES: ServiceItem[] = [
     problem:
       'Legacy storefronts and bloated marketplace themes leak revenue at every step — 4s+ page loads, 7-step checkouts, and cart abandonment rates above 65%.',
     solution:
-      'A headless commerce engine with one-page checkout and edge-cached catalog — proven on our own multi-vendor marketplace: -81% load time and a perfect 100 Lighthouse score.',
+      'A headless commerce engine with one-page checkout and edge-cached catalog — proven on MS Shop, our own multi-vendor marketplace: -81% load time and a 97/100 Lighthouse score.',
     techStack: ['Next.js', 'Headless Commerce', 'Stripe / SSLCommerz', 'PostgreSQL', 'Redis', 'Edge CDN'],
     keyOutcomes: [
       'Multi-vendor dashboards with automated commission & split payouts',
@@ -140,7 +141,7 @@ const SERVICES: ServiceItem[] = [
     ],
     metricHighlight: {
       value: '0.9s',
-      label: 'Load time on our own PulseCommerce marketplace'
+      label: 'Load time on MS Shop, our own marketplace engine'
     }
   }
 ];
@@ -172,11 +173,11 @@ export function ServicesSection({ onSelectServiceForConsultation }: ServicesSect
         </div>
 
         {/* 2x2 Neumorphic Services Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 perspective-3d">
           {SERVICES.map((service) => (
+            <Tilt3D key={service.id} maxTilt={4} scale={1.008} className="rounded-2xl">
             <article
-              key={service.id}
-              className="neu-raised neu-raised-hover rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden group border border-slate-100"
+              className="neu-raised rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden group border border-slate-100 h-full"
             >
               {/* Top Accent line with pulse glow */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00D2FF] via-[#6C5CE7] to-[#00D2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -270,6 +271,7 @@ export function ServicesSection({ onSelectServiceForConsultation }: ServicesSect
                 </div>
               </div>
             </article>
+            </Tilt3D>
           ))}
         </div>
       </div>

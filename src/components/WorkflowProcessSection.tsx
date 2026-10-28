@@ -1,6 +1,7 @@
 'use client';
 
 import { Search, PenTool, Code2, Rocket, ArrowRight } from 'lucide-react';
+import { Tilt3D } from './Tilt3D';
 
 interface WorkflowStep {
   id: string;
@@ -70,13 +71,13 @@ export function WorkflowProcessSection({ onOpenConsultation }: { onOpenConsultat
           {/* Top Accent line with pulse glow */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00D2FF] via-[#6C5CE7] to-[#00D2FF]" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10 perspective-3d">
             {WORKFLOW_STEPS.map((step, idx) => {
               const Icon = step.icon;
               return (
+                <Tilt3D key={step.id} maxTilt={6} className="rounded-2xl">
                 <div
-                  key={step.id}
-                  className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col relative group hover:border-[#00D2FF]/50 transition-colors duration-300"
+                  className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col relative group hover:border-[#00D2FF]/50 transition-colors duration-300 h-full"
                 >
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-sm font-bold font-mono-num text-[#00BBE6]">
@@ -99,6 +100,7 @@ export function WorkflowProcessSection({ onOpenConsultation }: { onOpenConsultat
                     <span>{step.deliverable}</span>
                   </div>
                 </div>
+                </Tilt3D>
               );
             })}
           </div>

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { PulseLogo } from './PulseLogo';
-import { LanguageSwitcher } from './LanguageSwitcher';
 import { useLocale } from '../context/LocaleContext';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
@@ -44,7 +43,7 @@ export function Navbar({ onOpenConsultation, onOpenEstimator }: NavbarProps) {
         <div className="flex items-center justify-between">
           {/* Zone 1: Single Brand Element Wordmark with Pulse Line */}
           <a
-            href="#"
+            href="#hero"
             className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] rounded-lg"
             aria-label="MS Pulse IT Home"
           >
@@ -67,10 +66,8 @@ export function Navbar({ onOpenConsultation, onOpenEstimator }: NavbarProps) {
             ))}
           </nav>
 
-          {/* Zone 3: 1-2 Primary Actions & Glassmorphic Language Switcher */}
+          {/* Zone 3: 1-2 Primary Actions */}
           <div className="hidden sm:flex items-center gap-2.5">
-            <LanguageSwitcher />
-
             <button
               onClick={onOpenEstimator}
               className="text-xs font-semibold text-slate-700 hover:text-[#6C5CE7] px-3 py-2 rounded-lg transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF]"
@@ -114,13 +111,6 @@ export function Navbar({ onOpenConsultation, onOpenEstimator }: NavbarProps) {
             ))}
           </div>
           <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
-            <div className="flex items-center justify-between py-1">
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                {t('nav.selectLanguage')}
-              </span>
-              <LanguageSwitcher />
-            </div>
-
             <button
               onClick={() => {
                 setMobileMenuOpen(false);

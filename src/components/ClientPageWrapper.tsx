@@ -19,41 +19,14 @@ import { ScrollProgressIndicator } from './ScrollProgressIndicator';
 export function ClientPageWrapper() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [selectedServiceForModal, setSelectedServiceForModal] = useState<string | undefined>(undefined);
-  const [estimatorScopeData, setEstimatorScopeData] = useState<
-    | {
-        track: string;
-        scale: string;
-        compliance: string;
-        timeline: string;
-        weeks: number;
-      }
-    | null
-  >(null);
 
   const handleOpenConsultation = () => {
     setSelectedServiceForModal(undefined);
-    setEstimatorScopeData(null);
     setIsConsultationOpen(true);
   };
 
   const handleSelectServiceForConsultation = (serviceTitle: string) => {
     setSelectedServiceForModal(serviceTitle);
-    setEstimatorScopeData(null);
-    setIsConsultationOpen(true);
-  };
-
-  const handlePreFillConsultation = (scopeData: {
-    track: string;
-    scale: string;
-    compliance: string;
-    timeline: string;
-  }) => {
-    const formattedScope = {
-      ...scopeData,
-      weeks: 8,
-    };
-    setEstimatorScopeData(formattedScope);
-    setSelectedServiceForModal(`Estimate Scope: ${scopeData.track} (${scopeData.scale})`);
     setIsConsultationOpen(true);
   };
 
@@ -121,9 +94,7 @@ export function ClientPageWrapper() {
         />
 
         {/* Interactive Scope & Velocity Estimator */}
-        <ProjectEstimator
-          onPreFillConsultation={handlePreFillConsultation}
-        />
+        <ProjectEstimator />
       </main>
 
       {/* Enterprise Footer */}
@@ -134,8 +105,7 @@ export function ClientPageWrapper() {
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
         preFilledScope={
-          estimatorScopeData ||
-          (selectedServiceForModal
+          selectedServiceForModal
             ? {
                 track: selectedServiceForModal,
                 scale: 'Scale-Up (50k - 500k MAU)',
@@ -143,7 +113,7 @@ export function ClientPageWrapper() {
                 timeline: 'Accelerated Sprint',
                 weeks: 6,
               }
-            : null)
+            : null
         }
       />
     </div>

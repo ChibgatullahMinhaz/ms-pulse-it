@@ -14,7 +14,7 @@ export function Footer({ onOpenConsultation }: { onOpenConsultation: () => void 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-100">
           {/* Brand Column (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#" className="inline-block" aria-label="MS Pulse IT Home">
+            <a href="#hero" className="inline-block" aria-label="MS Pulse IT Home">
               <PulseLogo size="md" />
             </a>
             <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
@@ -126,10 +126,33 @@ export function Footer({ onOpenConsultation }: { onOpenConsultation: () => void 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} MS Pulse IT Corporation. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-slate-600 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-600 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-slate-600 transition-colors">Security Whitepaper</a>
-            <a href="#" className="hover:text-slate-600 transition-colors">Schema JSON-LD</a>
+            <a
+              href="https://github.com/mspulseit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-600 transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/company/mspulseit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-600 transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://twitter.com/MSPulseIT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-600 transition-colors"
+            >
+              X / Twitter
+            </a>
+            <a href="mailto:contact@mspulseit.com" className="hover:text-slate-600 transition-colors">
+              Contact
+            </a>
           </div>
         </div>
       </div>

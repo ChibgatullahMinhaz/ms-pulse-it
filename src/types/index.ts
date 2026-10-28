@@ -16,13 +16,6 @@ export interface ServiceItem {
   };
 }
 
-export interface EstimatorOptions {
-  serviceTrack: 'app-aso' | 'cloud-architecture' | 'ai-enterprise' | 'full-ecosystem';
-  scaleTier: 'mvp' | 'scaleup' | 'enterprise';
-  compliance: 'standard' | 'soc2' | 'hipaa' | 'pci-dss';
-  timeline: 'standard' | 'accelerated' | 'phased';
-}
-
 export interface ConsultationRequest {
   fullName: string;
   email: string;

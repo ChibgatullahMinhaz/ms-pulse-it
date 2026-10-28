@@ -47,30 +47,15 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://mspulseit.com',
-    languages: {
-      en: 'https://mspulseit.com/?lang=en',
-      de: 'https://mspulseit.com/?lang=de',
-      fr: 'https://mspulseit.com/?lang=fr',
-      'x-default': 'https://mspulseit.com',
-    },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['de_DE', 'fr_FR'],
     url: 'https://mspulseit.com',
     siteName: 'MS Pulse IT',
     title: 'MS Pulse IT – Enterprise IT, App-SEO & Digital Engineering',
     description:
       'Transforming visions into digital pulse. Enterprise software engineering, App Store Optimization (ASO), and AI-driven scalable digital solutions.',
-    images: [
-      {
-        url: 'https://mspulseit.com/og-card.png',
-        width: 1200,
-        height: 630,
-        alt: 'MS Pulse IT Enterprise Platform',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -79,7 +64,6 @@ export const metadata: Metadata = {
     title: 'MS Pulse IT – Enterprise IT, App-SEO & Digital Engineering',
     description:
       'Transforming visions into digital pulse. Enterprise software engineering, App Store Optimization (ASO), and AI-driven scalable digital solutions.',
-    images: ['https://mspulseit.com/og-card.png'],
   },
 };
 
@@ -108,7 +92,7 @@ export default function RootLayout({
           '@type': 'ContactPoint',
           contactType: 'technical support',
           email: 'contact@mspulseit.com',
-          availableLanguage: ['English', 'German', 'French'],
+          availableLanguage: ['English'],
         },
       },
       {

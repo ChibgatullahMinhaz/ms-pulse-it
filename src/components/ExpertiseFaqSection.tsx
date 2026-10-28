@@ -100,25 +100,25 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'ip-ownership',
     category: 'Engagement & Commercial',
-    question: 'Who owns the source code and IP?',
+    question: 'Who owns the intellectual property and source code upon project completion?',
     answer:
-      'You do — 100%. Full intellectual property ownership of every line of source code, design asset, and infrastructure configuration is transferred to your organization upon completion. Throughout the engagement you hold direct git repository push access, so your team can audit, fork, or take over the codebase at any point. No licensing lock-ins, no proprietary runtime dependencies, no hostage clauses.',
+      'You retain 100% ownership. Upon final milestone sign-off, we transfer full repository ownership, documentation, and source code directly to your GitHub/GitLab organization with zero vendor lock-in.',
     technicalHighlights: [
-      '100% client IP and source code ownership upon completion',
-      'Direct git repository access from the first sprint',
-      'Zero proprietary lock-in — standard open frameworks only',
+      '100% IP ownership transferred upon final milestone sign-off',
+      'Full repository, documentation & source code moved to your GitHub/GitLab organization',
+      'Zero vendor lock-in — standard open frameworks only',
     ],
   },
   {
     id: 'post-launch-maintenance',
     category: 'Engagement & Commercial',
-    question: 'Do you provide post-launch maintenance?',
+    question: 'Do you provide post-launch maintenance, updates, and SLA support?',
     answer:
-      'Yes. Every production launch includes a dedicated Service Level Agreement (SLA) with defined response windows and bug-fix support. Our team monitors uptime, error rates, and performance regressions, ships patches on a priority cadence, and keeps dependencies, security advisories, and store compliance requirements current — so your platform keeps compounding value after go-live instead of decaying.',
+      'Yes. Every project includes a warranty period followed by flexible, dedicated monthly SLA maintenance options covering performance monitoring, security patches, and feature expansion.',
     technicalHighlights: [
-      'Dedicated SLA with defined incident response windows',
-      'Priority bug-fix support and proactive regression monitoring',
-      'Ongoing dependency, security, and OS/store compliance updates',
+      'Post-launch warranty period included with every project',
+      'Flexible, dedicated monthly SLA maintenance options',
+      'Performance monitoring, security patches & feature expansion',
     ],
   },
   {
@@ -134,15 +134,27 @@ const FAQ_ITEMS: FaqItem[] = [
     ],
   },
   {
-    id: 'sprint-velocity-handoff',
-    category: 'Security & SLA',
-    question: 'How do you handle project sprints, velocity tracking, and intellectual property handoff?',
+    id: 'delivery-timeline-milestones',
+    category: 'Engagement & Commercial',
+    question: 'How do you handle project delivery timelines and milestones?',
     answer:
-      'We operate on strict two-week agile sprint cadences with automated CI/CD staging environments provided on day one. You receive full, unencumbered intellectual property (IP) ownership and git repository push access throughout development. Every pull request undergoes peer review, unit tests, and performance benchmark gates before merge. At handover, we provide complete architectural documentation, infrastructure runbooks, and an onboarding knowledge transfer session.',
+      'We operate on structured 2-week agile sprints. You receive functional staging builds and live progress updates every two weeks, ensuring complete transparency and zero surprises.',
     technicalHighlights: [
-      'Bi-weekly verifiable sprint releases with staging preview environments',
-      '100% client intellectual property ownership from day one',
-      'Comprehensive architecture runbooks, API contracts, and handoff training',
+      'Structured 2-week agile sprint cadence with verifiable deliverables',
+      'Functional staging builds and live progress updates every two weeks',
+      'Complete transparency — zero surprises at every milestone',
+    ],
+  },
+  {
+    id: 'agency-trust-specialized-requirements',
+    category: 'Engagement & Commercial',
+    question: 'How can we trust an agency with new or specialized technical requirements?',
+    answer:
+      'Unlike agencies relying on template plugins, our core engineering background is proven by our in-house production systems—like our multi-vendor marketplace (MS Shop) and WebRTC media server (LiveCore)—built for extreme scale and performance.',
+    technicalHighlights: [
+      'In-house production systems: MS Shop marketplace & LiveCore WebRTC media server',
+      'Custom engineering from first principles — no template plugins',
+      'Architected for extreme scale and performance',
     ],
   },
 ];

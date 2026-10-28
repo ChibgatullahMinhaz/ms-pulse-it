@@ -58,7 +58,7 @@ export function NewsletterSubscription() {
             <Download className="w-3.5 h-3.5 text-[#00BBE6]" />
             <span>Free Resource</span>
             <span aria-hidden="true">·</span>
-            <span>Instant Download</span>
+            <span>Engineering Briefing</span>
           </div>
 
           <h3 className="text-2xl sm:text-3xl font-extrabold text-[#1A1D21] tracking-tight [text-wrap:balance]">
@@ -66,7 +66,7 @@ export function NewsletterSubscription() {
           </h3>
 
           <p className="text-sm text-slate-600 leading-relaxed max-w-lg">
-            Subscribe and instantly receive our engineering checklist — the exact audit framework we use on our own marketplace. Plus occasional technical breakdowns. Strictly architecture — no sales spam.
+            Subscribe to receive our engineering checklist — the exact audit framework we use on our own marketplace. Plus occasional technical breakdowns. Strictly architecture — no sales spam.
           </p>
 
           <div className="flex items-center gap-4 text-xs text-slate-500 pt-1">
@@ -75,7 +75,7 @@ export function NewsletterSubscription() {
               Zero spam guarantee
             </span>
             <span aria-hidden="true">·</span>
-            <span>Instant delivery</span>
+            <span>Engineering content only</span>
             <span aria-hidden="true">·</span>
             <span>Unsubscribe in 1-click</span>
           </div>
@@ -100,10 +100,10 @@ export function NewsletterSubscription() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-emerald-950">
-                      Checklist On Its Way!
+                      You're On the List!
                     </h4>
                     <p className="text-xs text-emerald-800 mt-0.5">
-                      Subscribed as <strong className="font-semibold">{email}</strong>. Your free checklist is being delivered now.
+                      Subscribed as <strong className="font-semibold">{email}</strong>. The checklist will arrive with our next engineering briefing.
                     </p>
                   </div>
                 </div>

@@ -46,7 +46,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     specialty: 'Next.js, Edge SSR & Serverless Platforms',
     initials: 'TH',
     avatarGradient: 'from-[#6C5CE7] to-[#4834D4]',
-    bio: 'Owns web platform delivery — server-driven Next.js architectures, edge rendering, and the headless commerce stack powering our PulseCommerce marketplace.',
+    bio: 'Owns web platform delivery — server-driven Next.js architectures, edge rendering, and the headless commerce stack powering our MS Shop marketplace.',
     techFocus: ['Next.js App Router', 'TypeScript', 'Cloudflare Workers', 'Edge SSR'],
     metricsBadge: 'Web & Cloud Lead',
     socials: {

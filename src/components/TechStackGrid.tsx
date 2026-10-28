@@ -1,4 +1,5 @@
 import { Smartphone, Globe, Terminal, Cpu, Cloud, Database, Layers, ShieldCheck } from 'lucide-react';
+import { Tilt3D } from './Tilt3D';
 
 interface TechStackItem {
   id: string;
@@ -132,13 +133,13 @@ export function TechStackGrid() {
         </div>
 
         {/* 4x2 Responsive Neumorphic Stack Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-3d">
           {TECH_STACK.map((tech) => {
             const Icon = tech.icon;
             return (
+              <Tilt3D key={tech.id} maxTilt={7} className="rounded-2xl">
               <div
-                key={tech.id}
-                className="neu-raised neu-raised-hover rounded-2xl p-6 flex flex-col justify-between border border-slate-100 group relative overflow-hidden"
+                className="neu-raised rounded-2xl p-6 flex flex-col justify-between border border-slate-100 group relative overflow-hidden h-full"
               >
                 {/* Top Subtle Pulse Gradient Line on Hover */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00D2FF] to-[#6C5CE7] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -181,6 +182,7 @@ export function TechStackGrid() {
                   </span>
                 </div>
               </div>
+              </Tilt3D>
             );
           })}
         </div>
