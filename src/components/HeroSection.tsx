@@ -31,15 +31,15 @@ export function HeroSection({ onOpenConsultation, onViewCaseStudy }: HeroSection
           <span>Enterprise Reliability</span>
         </div>
 
-        {/* Primary Headline with Balances & Dynamic Gradient Accent */}
+        {/* Primary Headline: Niche Outcome + Technical Stack + Verifiable Metric */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1A1D21] max-w-5xl mx-auto leading-[1.08] [text-wrap:balance]">
-          Transforming Visions into{' '}
-          <span className="text-gradient-pulse drop-shadow-sm">Custom Software & Scalable Digital Architecture</span>
+          Custom Software & Scalable Digital Architecture,{' '}
+          <span className="text-gradient-pulse drop-shadow-sm">Engineered for Sub-Second Performance</span>
         </h1>
 
         {/* Subtitle */}
         <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed [text-wrap:balance]">
-          A full-cycle software agency engineering custom enterprise platforms (CRM/ERP), web & mobile apps, desktop software, and real-time media infrastructure — converting ambitious roadmaps into measurable business outcomes: faster platforms, higher conversion, and systems built to scale.
+          A full-cycle software agency engineering enterprise platforms (CRM/ERP), web & mobile apps, and real-time media infrastructure — proven on our own production systems: <strong className="text-slate-900">0.9s load time</strong> on MS Shop and <strong className="text-slate-900">&lt;300ms latency</strong> on LiveCore.
         </p>
 
         {/* Interactive Action CTAs with Neumorphic Physicality */}

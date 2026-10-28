@@ -5,6 +5,7 @@ import { Navbar } from './Navbar';
 import { HeroSection } from './HeroSection';
 import { ServicesSection } from './ServicesSection';
 import { TechStackGrid } from './TechStackGrid';
+import { DevOpsPipelineSection } from './DevOpsPipelineSection';
 import { FeaturedLabSection } from './FeaturedLabSection';
 import { WorkflowProcessSection } from './WorkflowProcessSection';
 import { AppSeoShowcase } from './AppSeoShowcase';
@@ -69,6 +70,11 @@ export function ClientPageWrapper() {
 
         {/* Server-Grade Tech Stack Grid */}
         <TechStackGrid />
+
+        {/* DevOps & Delivery Pipeline */}
+        <DevOpsPipelineSection
+          onOpenConsultation={handleOpenConsultation}
+        />
 
         {/* Interactive Engineering Lab Sandbox */}
         <FeaturedLabSection

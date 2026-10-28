@@ -30,7 +30,7 @@ const ARTICLES: Article[] = [
     readTime: '6 min read',
     date: 'March 2026',
     author: 'Minhazul Abedin',
-    authorRole: 'Principal Mobile Architect',
+    authorRole: 'Chief Operating Officer',
     excerpt:
       'How we optimized Apple App Site Association (AASA) records, assetlinks.json routing, and client-side link resolution to bypass browser bounce latency entirely.',
     keyTakeaways: [
@@ -50,12 +50,12 @@ const ARTICLES: Article[] = [
   },
   {
     id: 'nextjs-edge-ssr',
-    title: 'Next.js 15 App Router: Edge SSR & Sub-50ms Global Core Web Vitals',
+    title: 'Next.js App Router: Edge SSR & Sub-50ms Global Core Web Vitals',
     category: 'Full-Stack Web',
     readTime: '8 min read',
     date: 'February 2026',
     author: 'Tahmid Hasan',
-    authorRole: 'Head of Web Engineering',
+    authorRole: 'Chief Technology Officer',
     excerpt:
       'A deep dive into React Server Components (RSC), selective hydration streaming, and automated Schema.org JSON-LD injection that achieved 100/100 Lighthouse ratings.',
     keyTakeaways: [
@@ -67,7 +67,7 @@ const ARTICLES: Article[] = [
       problemStatement:
         'Traditional Single Page Applications (SPAs) ship megabytes of client JavaScript, leading to poor Core Web Vitals (INP, LCP) and failing Google crawl budgets.',
       architecturalSolution:
-        'By orchestrating Next.js 15 App Router on global V8 edge nodes, HTML streams immediately with server-side rendered layouts. Dynamic structured schemas are injected into the document head before the first byte leaves the edge.',
+        'By orchestrating Next.js App Router on global V8 edge nodes, HTML streams immediately with server-side rendered layouts. Dynamic structured schemas are injected into the document head before the first byte leaves the edge.',
       codeSnippetTitle: 'Dynamic JSON-LD Schema Generator in Next.js Server Component',
       codeSnippet: `export async function generateMetadata(): Promise<Metadata> {\n  return {\n    title: 'MS Pulse IT | Enterprise Cloud Architecture',\n    openGraph: {\n      type: 'website',\n      url: 'https://mspulseit.com',\n      images: [{ url: '/og-card.png', width: 1200, height: 630 }],\n    },\n  };\n}`,
       productionBenchmark: 'The same architecture powers this very website — verify our Lighthouse score yourself.',

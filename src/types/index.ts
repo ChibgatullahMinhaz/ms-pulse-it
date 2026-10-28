@@ -20,6 +20,7 @@ export interface ConsultationRequest {
   fullName: string;
   email: string;
   company: string;
+  websiteUrl: string;
   projectTrack: string;
   scaleTier: string;
   timeline: string;

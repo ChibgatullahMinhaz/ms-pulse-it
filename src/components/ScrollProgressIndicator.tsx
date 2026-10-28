@@ -12,11 +12,12 @@ const SECTIONS: SectionTarget[] = [
   { id: 'hero', label: 'Vision & Pulse', shortCode: '01' },
   { id: 'services', label: 'Capabilities', shortCode: '02' },
   { id: 'tech-stack', label: 'Tech Stack', shortCode: '03' },
-  { id: 'featured-lab', label: 'Featured Lab', shortCode: '04' },
-  { id: 'app-seo', label: 'App-SEO Matrix', shortCode: '05' },
-  { id: 'architecture', label: 'Architecture', shortCode: '06' },
-  { id: 'faq', label: 'Architecture FAQ', shortCode: '07' },
-  { id: 'estimator', label: 'Scope Calculator', shortCode: '08' },
+  { id: 'devops', label: 'DevOps Pipeline', shortCode: '04' },
+  { id: 'featured-lab', label: 'Featured Lab', shortCode: '05' },
+  { id: 'app-seo', label: 'App-SEO Matrix', shortCode: '06' },
+  { id: 'architecture', label: 'Architecture', shortCode: '07' },
+  { id: 'faq', label: 'Architecture FAQ', shortCode: '08' },
+  { id: 'estimator', label: 'Scope Calculator', shortCode: '09' },
 ];
 
 export function ScrollProgressIndicator() {

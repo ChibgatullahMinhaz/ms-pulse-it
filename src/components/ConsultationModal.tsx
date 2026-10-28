@@ -21,6 +21,7 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
     fullName: '',
     email: '',
     company: '',
+    websiteUrl: '',
     projectTrack: 'Custom Enterprise Software (CRM / ERP)',
     scaleTier: 'Scale-Up (50k - 500k MAU)',
     timeline: 'Standard Agile Cadence',
@@ -245,6 +246,19 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
                   {errors.company && (
                     <span className="text-[11px] text-red-500 mt-1 block">{errors.company}</span>
                   )}
+                </div>
+
+                <div>
+                  <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-1">
+                    Current Website / Platform URL <span className="text-slate-400 font-medium normal-case">(optional — for audit)</span>
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="https://yourstore.com"
+                    value={formData.websiteUrl}
+                    onChange={(e) => setFormData({ ...formData, websiteUrl: e.target.value })}
+                    className="w-full px-4 py-2.5 text-sm rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-[#00D2FF] focus:outline-none transition-colors"
+                  />
                 </div>
 
                 <div className="pt-4 flex justify-end">

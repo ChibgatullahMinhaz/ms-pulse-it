@@ -1,4 +1,4 @@
-import { Smartphone, Globe, Terminal, Cpu, Cloud, Database, Layers, ShieldCheck } from 'lucide-react';
+import { Smartphone, Globe, Terminal, Cpu, Cloud, Database, Layers, ShieldCheck, Code2 } from 'lucide-react';
 import { Tilt3D } from './Tilt3D';
 
 interface TechStackItem {
@@ -28,7 +28,7 @@ const TECH_STACK: TechStackItem[] = [
   },
   {
     id: 'nextjs',
-    name: 'Next.js 15 & React',
+    name: 'Next.js & React',
     category: 'Web & SSR',
     role: 'Enterprise Web & Edge SSR',
     description:
@@ -37,6 +37,18 @@ const TECH_STACK: TechStackItem[] = [
     icon: Globe,
     gradient: 'from-[#6C5CE7] to-[#4834D4]',
     features: ['App Router SSR', 'Dynamic JSON-LD Schema', 'Turbopack Bundler'],
+  },
+  {
+    id: 'react-native',
+    name: 'React Native',
+    category: 'Mobile',
+    role: 'Native-Performance Cross-Platform Apps',
+    description:
+      'Single TypeScript codebase shipping truly native iOS and Android experiences — with native module bridges, OTA updates, and shared business logic with your web platform.',
+    latencyBadge: 'OTA Update Pipeline',
+    icon: Code2,
+    gradient: 'from-[#00BBE6] to-[#0088CC]',
+    features: ['Native Module Bridges', 'Expo & Bare Workflows', 'Shared TS Business Logic'],
   },
   {
     id: 'python',
@@ -132,8 +144,8 @@ export function TechStackGrid() {
           </p>
         </div>
 
-        {/* 4x2 Responsive Neumorphic Stack Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-3d">
+        {/* Responsive Neumorphic Stack Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 perspective-3d">
           {TECH_STACK.map((tech) => {
             const Icon = tech.icon;
             return (

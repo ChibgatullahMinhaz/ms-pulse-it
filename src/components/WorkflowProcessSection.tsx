@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, PenTool, Code2, Rocket, ArrowRight } from 'lucide-react';
+import { Search, PenTool, Code2, Rocket, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Tilt3D } from './Tilt3D';
 
 interface WorkflowStep {
@@ -117,6 +117,31 @@ export function WorkflowProcessSection({ onOpenConsultation }: { onOpenConsultat
               <span>Start Step 01 — Free</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#00D2FF]" />
             </button>
+          </div>
+
+          {/* Transparent Quality Assurance Protocol */}
+          <div className="mt-6 p-5 rounded-2xl bg-slate-50 border border-slate-200/80 relative z-10">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700 mb-3">
+              <ShieldCheck className="w-4 h-4 text-[#00BBE6]" />
+              <span>Our Published Quality Assurance Protocol</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+              {[
+                'Peer-Reviewed Pull Requests',
+                'Automated CI Test Gates',
+                'Core Web Vitals Budgets',
+                'WCAG AA Accessibility',
+                'Cross-Browser Matrix Testing',
+                'Zero Plaintext Secrets',
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="text-[11px] font-semibold text-slate-700 bg-white border border-slate-200/80 rounded-lg px-2.5 py-2 text-center"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

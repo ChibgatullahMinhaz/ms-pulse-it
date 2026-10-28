@@ -62,11 +62,11 @@ export function NewsletterSubscription() {
           </div>
 
           <h3 className="text-2xl sm:text-3xl font-extrabold text-[#1A1D21] tracking-tight [text-wrap:balance]">
-            Get the Free E-Commerce Conversion & Speed Checklist
+            Get the Free Software Performance & Architecture Checklist
           </h3>
 
           <p className="text-sm text-slate-600 leading-relaxed max-w-lg">
-            Subscribe to receive our engineering checklist — the exact audit framework we use on our own marketplace. Plus occasional technical breakdowns. Strictly architecture — no sales spam.
+            Subscribe to receive our engineering checklist — the exact audit framework we run on our own production systems (MS Shop & LiveCore). Plus occasional technical breakdowns. Strictly architecture — no sales spam.
           </p>
 
           <div className="flex items-center gap-4 text-xs text-slate-500 pt-1">
