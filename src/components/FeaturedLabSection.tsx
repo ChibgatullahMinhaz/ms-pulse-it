@@ -246,6 +246,21 @@ export function FeaturedLabSection({ onOpenConsultation }: { onOpenConsultation:
               </div>
             </div>
 
+            {/* Founder Quote */}
+            <div className="mb-8 p-5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-sm shrink-0">
+                MA
+              </div>
+              <div>
+                <p className="text-sm text-slate-700 leading-relaxed italic">
+                  "We built PulseCommerce because we needed a marketplace that didn't fight us at every step. Every optimization you see here is something we run in production ourselves — if it doesn't work for us, we don't ship it to clients."
+                </p>
+                <p className="text-xs text-slate-500 mt-2 font-semibold">
+                  — Minhazul Abedin, Founder & Principal Systems Architect
+                </p>
+              </div>
+            </div>
+
             {/* Before / After Measurable Outcome Card */}
             <div className="rounded-2xl border border-slate-200/80 bg-slate-50/60 p-5 sm:p-6">
               <div className="flex items-center justify-between mb-5">
@@ -363,6 +378,21 @@ export function FeaturedLabSection({ onOpenConsultation }: { onOpenConsultation:
                 <h4 className="text-sm font-bold text-[#1A1D21] mb-1.5">Optimization</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Edge relay placement and congestion tuning cut glass-to-glass latency under 300ms while infrastructure cost per stream dropped 64%.
+                </p>
+              </div>
+            </div>
+
+            {/* Founder Quote */}
+            <div className="mb-8 p-5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-sm shrink-0">
+                MA
+              </div>
+              <div>
+                <p className="text-sm text-slate-700 leading-relaxed italic">
+                  "Third-party streaming SDKs were charging us per-minute fees that scaled faster than our revenue. We built LiveCore to own our own media pipeline — and now we offer the same infrastructure freedom to our clients."
+                </p>
+                <p className="text-xs text-slate-500 mt-2 font-semibold">
+                  — Minhazul Abedin, Founder & Principal Systems Architect
                 </p>
               </div>
             </div>

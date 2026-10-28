@@ -9,7 +9,6 @@ import { FeaturedLabSection } from './FeaturedLabSection';
 import { WorkflowProcessSection } from './WorkflowProcessSection';
 import { AppSeoShowcase } from './AppSeoShowcase';
 import { ArchitecturePulse } from './ArchitecturePulse';
-import { TechInsightsSection } from './TechInsightsSection';
 import { ExpertiseFaqSection } from './ExpertiseFaqSection';
 import { ProjectEstimator } from './ProjectEstimator';
 import { Footer } from './Footer';
@@ -115,11 +114,6 @@ export function ClientPageWrapper() {
 
         {/* 5-Tier Architecture Resilience Matrix */}
         <ArchitecturePulse />
-
-        {/* Technical Insights & Research Articles */}
-        <TechInsightsSection
-          onOpenConsultation={handleOpenConsultation}
-        />
 
         {/* Technical FAQ with Schema.org Grounding */}
         <ExpertiseFaqSection

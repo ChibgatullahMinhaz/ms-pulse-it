@@ -89,11 +89,6 @@ export function Footer({ onOpenConsultation }: { onOpenConsultation: () => void 
                 </a>
               </li>
               <li>
-                <a href="#tech-insights" className="hover:text-[#00BBE6] transition-colors">
-                  Tech Insights & Blog
-                </a>
-              </li>
-              <li>
                 <a href="#faq" className="hover:text-[#00BBE6] transition-colors">
                   Expertise FAQ
                 </a>

@@ -120,10 +120,10 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
               Pulse Signal Confirmed
             </div>
             <h3 className="text-2xl font-bold text-[#1A1D21] mb-2">
-              Consultation Dispatched
+              Audit Request Received
             </h3>
             <p className="text-sm text-slate-600 max-w-md mx-auto mb-6 leading-relaxed">
-              Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. Our enterprise engineering lead will review your architecture scope for <strong className="text-slate-900">{formData.company}</strong> and send an executive briefing within 4 business hours.
+              Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. Our engineering lead will review the current stack for <strong className="text-slate-900">{formData.company}</strong> and send your technical audit briefing within 24 hours.
             </p>
 
             <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2 mb-6 max-w-md mx-auto">
@@ -184,13 +184,13 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
             </div>
 
             <div className="text-xs font-bold uppercase tracking-wider text-[#00BBE6] mb-1">
-              Direct Engineering Consultation
+              Free Technical Audit
             </div>
             <h3 className="text-2xl font-bold text-[#1A1D21] mb-2">
-              Request Your Architecture Review
+              Request Your Free Technical Audit
             </h3>
             <p className="text-sm text-slate-600 mb-6">
-              Speak directly with an enterprise solutions architect. No sales scripts, only technical analysis and roadmap planning.
+              Get a complimentary architecture review of your current stack — performance bottlenecks, security gaps, and a prioritized fix roadmap. No sales scripts, only technical analysis.
             </p>
 
             {/* Step 1: Contact Details */}
@@ -252,7 +252,7 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
                     type="submit"
                     className="px-6 py-3 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF]"
                   >
-                    <span>Proceed to Project Scope</span>
+                    <span>Proceed to Scope Details</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#00D2FF]" />
                   </button>
                 </div>
@@ -344,7 +344,7 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
                     type="submit"
                     className="px-6 py-3 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF]"
                   >
-                    <span>Review & Finalize</span>
+                    <span>Review & Submit</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#00D2FF]" />
                   </button>
                 </div>
@@ -398,11 +398,11 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
                     {isSubmitting ? (
                       <>
                         <Activity className="w-4 h-4 text-[#00D2FF] animate-spin" />
-                        <span>Transmitting Architecture Pulse...</span>
+                        <span>Submitting Audit Request...</span>
                       </>
                     ) : (
                       <>
-                        <span>Submit Consultation Request</span>
+                        <span>Request Free Technical Audit</span>
                         <ArrowRight className="w-3.5 h-3.5 text-[#00D2FF]" />
                       </>
                     )}
@@ -411,7 +411,18 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
 
                 {/* Trust Micro-Copy */}
                 <p className="pt-3 text-center text-[11px] text-slate-400">
-                  Free 30-min Technical Consultation • Response within 24 Hours • Strict NDA Protection
+                  Free 30-min Technical Audit • Response within 24 Hours • Strict NDA Protection
+                </p>
+
+                {/* Direct Calendar Booking Fallback */}
+                <p className="text-center text-[11px] text-slate-400">
+                  Prefer to skip the form?{' '}
+                  <a
+                    href="mailto:contact@mspulseit.com?subject=Book%20a%2030-min%20Technical%20Audit"
+                    className="text-[#00BBE6] hover:underline font-medium"
+                  >
+                    Book directly via email
+                  </a>
                 </p>
               </form>
             )}

@@ -40,7 +40,7 @@ export function HeroSection({ onOpenConsultation, onViewCaseStudy }: HeroSection
             onClick={onOpenConsultation}
             className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-slate-900 hover:bg-slate-800 shadow-lg shadow-slate-900/15 hover:shadow-slate-900/25 transition-all duration-200 flex items-center justify-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF]"
           >
-            <span>Get a Free Project Consultation</span>
+            <span>Get a Free Technical Audit</span>
             <ArrowRight className="w-4 h-4 text-[#00D2FF] group-hover:translate-x-1 transition-transform" />
           </button>
 

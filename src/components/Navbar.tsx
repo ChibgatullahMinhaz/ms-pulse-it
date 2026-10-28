@@ -29,7 +29,6 @@ export function Navbar({ onOpenConsultation, onOpenEstimator }: NavbarProps) {
     { label: t('nav.techStack'), href: '#tech-stack' },
     { label: t('nav.featuredLab'), href: '#featured-lab' },
     { label: t('nav.appSeo'), href: '#app-seo' },
-    { label: t('nav.insights'), href: '#tech-insights' },
     { label: t('nav.estimator'), href: '#estimator' },
   ];
 

@@ -6,7 +6,7 @@ import { Smartphone, Zap, Search, Link2, CheckCircle2, ArrowRight } from 'lucide
 interface AppCategoryOption {
   id: string;
   name: string;
-  defaultDownloads: number;
+  defaultDownloads?: number;
   sampleKeywords: string[];
 }
 
@@ -14,25 +14,25 @@ const CATEGORIES: AppCategoryOption[] = [
   {
     id: 'fintech',
     name: 'Fintech & Banking',
-    defaultDownloads: 14000,
+    defaultDownloads: 0,
     sampleKeywords: ['instant transfer', 'smart invest', 'crypto wallet', 'budget ai'],
   },
   {
     id: 'health',
     name: 'Health & Wellness',
-    defaultDownloads: 11000,
+    defaultDownloads: 0,
     sampleKeywords: ['telehealth', 'sleep tracker', 'vitals log', 'habit coach'],
   },
   {
     id: 'saas',
     name: 'B2B Workflow & SaaS',
-    defaultDownloads: 8500,
+    defaultDownloads: 0,
     sampleKeywords: ['project planner', 'team chat', 'crm mobile', 'invoice sync'],
   },
   {
     id: 'ecommerce',
     name: 'Omnichannel Retail',
-    defaultDownloads: 18000,
+    defaultDownloads: 0,
     sampleKeywords: ['flash deals', 'curbside pickup', 'smart catalog', 'fast checkout'],
   },
 ];
@@ -51,7 +51,6 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
       conversionRate: '2.1%',
       deepLinkLatency: '780ms',
       visibilityScore: '32 / 100',
-      multiplier: 1.0,
       description: 'Standard store listing with unmanaged metadata, fragmented keywords, and standard web links.',
     },
     {
@@ -61,7 +60,6 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
       conversionRate: '4.2%',
       deepLinkLatency: '240ms',
       visibilityScore: '74 / 100',
-      multiplier: 1.95,
       description: 'Semantic keyword indexing, localized screenshots, Apple Search Ads alignment, and fast App Clips.',
     },
     {
@@ -71,13 +69,11 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
       conversionRate: '6.8%',
       deepLinkLatency: '38ms',
       visibilityScore: '98 / 100',
-      multiplier: 3.1,
       description: 'Continuous A/B testing on store conversion, zero-latency Universal Links, schema structured data, and review sentiment engine.',
     },
   ];
 
   const currentLevel = metricsByLevel[optimizationLevel - 1];
-  const projectedInstalls = Math.round(selectedCategory.defaultDownloads * currentLevel.multiplier);
 
   const handleTestDeepLink = () => {
     setDeepLinkTestState('routing');
@@ -102,7 +98,7 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
             Engineering App Store Algorithms for Predictable Organic Scale
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Most IT teams treat mobile app stores as an afterthought. MS Pulse IT treats App Store Optimization (ASO) and Deep Linking as core software architecture. Test our algorithmic impact below.
+            Most IT teams treat mobile app stores as an afterthought. MS Pulse IT treats App Store Optimization (ASO) and Deep Linking as core software architecture. Explore the simulated impact model below.
           </p>
         </div>
 
@@ -140,7 +136,7 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
                     Architecture & ASO Pipeline Depth
                   </label>
                   <span className="text-xs font-bold text-[#6C5CE7] bg-indigo-50 px-2.5 py-1 rounded-md">
-                    Level {optimizationLevel}: {currentLevel.title}
+                    Level {optimizationLevel}: {currentLevel.title} (Simulated)
                   </span>
                 </div>
 
@@ -184,16 +180,16 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
                 </div>
 
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                  <div className="text-[11px] font-semibold text-slate-500">Deep Link Latency</div>
+                  <div className="text-[11px] font-semibold text-slate-500">Deep Link Speed</div>
                   <div className="text-lg font-bold font-mono-num text-[#6C5CE7] mt-0.5">
                     {currentLevel.deepLinkLatency}
                   </div>
                 </div>
 
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                  <div className="text-[11px] font-semibold text-slate-500">Monthly Installs</div>
+                  <div className="text-[11px] font-semibold text-slate-500">Visibility Score</div>
                   <div className="text-lg font-bold font-mono-num text-emerald-600 mt-0.5">
-                    {projectedInstalls.toLocaleString()}
+                    {currentLevel.visibilityScore}
                   </div>
                 </div>
               </div>
@@ -210,7 +206,7 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
 
                 <div className="flex flex-col sm:flex-row items-center gap-2">
                   <div className="w-full flex-1 px-3 py-2 text-xs font-mono text-slate-700 bg-slate-100 rounded-lg border border-slate-200 truncate">
-                    https://mspulseit.app/{selectedCategory.id}/deep-link?campaign=organic_aso_v3
+                    https://example.app/{selectedCategory.id}/deep-link?campaign=organic_aso
                   </div>
                   <button
                     onClick={handleTestDeepLink}
@@ -219,7 +215,7 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
                   >
                     {deepLinkTestState === 'idle' && 'Test Universal Link'}
                     {deepLinkTestState === 'routing' && 'Resolving Route...'}
-                    {deepLinkTestState === 'success' && 'Routed in 38ms! ✓'}
+                    {deepLinkTestState === 'success' && 'Route Resolved ✓'}
                   </button>
                 </div>
               </div>
@@ -247,9 +243,9 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
                   </p>
 
                   <div className="flex items-center gap-1.5 mt-1.5 text-xs">
-                    <span className="font-bold text-amber-500">4.9 ★</span>
+                    <span className="font-bold text-amber-500">★ ★ ★ ★ ★</span>
                     <span className="text-slate-400">·</span>
-                    <span className="text-slate-500 text-[11px]">38.4k Ratings</span>
+                    <span className="text-slate-500 text-[11px]">Store Preview</span>
                   </div>
                 </div>
               </div>
@@ -307,7 +303,7 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
                   onClick={onOpenConsultation}
                   className="w-full py-3 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF]"
                 >
-                  <span>Request Full ASO Audit For Your App</span>
+                  <span>Request Free ASO Audit For Your App</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#00D2FF]" />
                 </button>
               </div>

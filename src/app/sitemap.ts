@@ -11,8 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/#featured-lab',
     '/#app-seo',
     '/#architecture',
-    '/#tech-insights',
-    '/#team',
     '/#faq',
     '/#estimator',
   ];
