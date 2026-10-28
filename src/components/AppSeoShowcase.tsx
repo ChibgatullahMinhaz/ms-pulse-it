@@ -194,31 +194,7 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
                 </div>
               </div>
 
-              {/* Deep Link Redirection Simulator */}
-              <div className="mt-6 pt-6 border-t border-slate-100">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-700">
-                    <Link2 className="w-4 h-4 text-[#00BBE6]" />
-                    <span>App-SEO Universal Deep Link Protocol</span>
-                  </div>
-                  <span className="text-[11px] text-slate-400">RFC 3986 Standard</span>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center gap-2">
-                  <div className="w-full flex-1 px-3 py-2 text-xs font-mono text-slate-700 bg-slate-100 rounded-lg border border-slate-200 truncate">
-                    https://example.app/{selectedCategory.id}/deep-link?campaign=organic_aso
-                  </div>
-                  <button
-                    onClick={handleTestDeepLink}
-                    disabled={deepLinkTestState !== 'idle'}
-                    className="w-full sm:w-auto px-4 py-2 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 disabled:bg-slate-400 rounded-lg transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF]"
-                  >
-                    {deepLinkTestState === 'idle' && 'Test Universal Link'}
-                    {deepLinkTestState === 'routing' && 'Resolving Route...'}
-                    {deepLinkTestState === 'success' && 'Route Resolved ✓'}
-                  </button>
-                </div>
-              </div>
+           
             </div>
           </div>
 
