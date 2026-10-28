@@ -17,7 +17,7 @@ export default async function HomePage() {
       },
       {
         '@type': 'Question',
-        name: 'What latency guarantees do you engineer into cross-platform Flutter applications?',
+        name: 'What latency targets do you engineer into cross-platform Flutter applications?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'We target a deterministic 120 FPS render target by delegating compute-heavy operations (cryptographic parsing, image decoding, WebSocket ingestion) to background Dart worker isolates.',
@@ -28,7 +28,7 @@ export default async function HomePage() {
         name: 'How do you design zero-single-point-of-failure cloud infrastructure?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We design immutable infrastructure across multiple availability zones using Terraform/OpenTofu, Kubernetes multi-region ingress, and CockroachDB/PostgreSQL distributed clusters.',
+          text: 'We design resilient infrastructure across multiple availability zones using Terraform/OpenTofu, Kubernetes multi-region ingress, and distributed PostgreSQL clusters.',
         },
       },
     ],

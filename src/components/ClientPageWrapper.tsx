@@ -6,10 +6,10 @@ import { HeroSection } from './HeroSection';
 import { ServicesSection } from './ServicesSection';
 import { TechStackGrid } from './TechStackGrid';
 import { FeaturedLabSection } from './FeaturedLabSection';
+import { WorkflowProcessSection } from './WorkflowProcessSection';
 import { AppSeoShowcase } from './AppSeoShowcase';
 import { ArchitecturePulse } from './ArchitecturePulse';
 import { TechInsightsSection } from './TechInsightsSection';
-import { TeamSection } from './TeamSection';
 import { ExpertiseFaqSection } from './ExpertiseFaqSection';
 import { ProjectEstimator } from './ProjectEstimator';
 import { Footer } from './Footer';
@@ -65,6 +65,13 @@ export function ClientPageWrapper() {
     }
   };
 
+  const handleViewCaseStudy = () => {
+    const el = document.getElementById('flagship-case-study');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#F7F9FC] text-[#1A1D21] selection:bg-[#00D2FF]/20 selection:text-slate-900 relative">
       <InteractiveCursor />
@@ -80,7 +87,7 @@ export function ClientPageWrapper() {
         {/* Hero Section with Live Metrics & Canvas */}
         <HeroSection
           onOpenConsultation={handleOpenConsultation}
-          onOpenEstimator={handleOpenEstimator}
+          onViewCaseStudy={handleViewCaseStudy}
         />
 
         {/* Core Services Bento Grid */}
@@ -96,6 +103,11 @@ export function ClientPageWrapper() {
           onOpenConsultation={handleOpenConsultation}
         />
 
+        {/* 4-Step How We Work Delivery Timeline */}
+        <WorkflowProcessSection
+          onOpenConsultation={handleOpenConsultation}
+        />
+
         {/* App-SEO & Deep Link Interactive Visualizer */}
         <AppSeoShowcase
           onOpenConsultation={handleOpenConsultation}
@@ -106,11 +118,6 @@ export function ClientPageWrapper() {
 
         {/* Technical Insights & Research Articles */}
         <TechInsightsSection
-          onOpenConsultation={handleOpenConsultation}
-        />
-
-        {/* Engineering Leadership Team */}
-        <TeamSection
           onOpenConsultation={handleOpenConsultation}
         />
 
@@ -138,7 +145,7 @@ export function ClientPageWrapper() {
             ? {
                 track: selectedServiceForModal,
                 scale: 'Scale-Up (50k - 500k MAU)',
-                compliance: 'Standard SOC2/GDPR',
+                compliance: 'Standard Security Best Practices',
                 timeline: 'Accelerated Sprint',
                 weeks: 6,
               }

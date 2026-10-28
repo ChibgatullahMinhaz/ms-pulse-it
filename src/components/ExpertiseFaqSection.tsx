@@ -6,7 +6,7 @@ import { ChevronDown, HelpCircle, Sparkles, ArrowRight, CheckCircle2, ShieldChec
 
 interface FaqItem {
   id: string;
-  category: 'App-SEO & Mobile' | 'Cloud & Architecture' | 'AI & Data' | 'Security & SLA';
+  category: 'App-SEO & Mobile' | 'Cloud & Architecture' | 'AI & Data' | 'Security & SLA' | 'Engagement & Commercial';
   question: string;
   answer: string;
   technicalHighlights: string[];
@@ -18,23 +18,23 @@ const FAQ_ITEMS: FaqItem[] = [
     category: 'App-SEO & Mobile',
     question: 'How does MS Pulse IT’s App-SEO framework differ from traditional ASO marketing?',
     answer:
-      'Traditional App Store Optimization (ASO) relies solely on keyword stuffing in store metadata. MS Pulse IT’s proprietary App-SEO framework bridges store indexing directly with web search engines. We engineer structured Schema.org JSON-LD records on your web domain, configure RFC 3986 Apple App Site Association (AASA) and Android assetlinks.json files, and implement deep-link URL routes. This allows Google and Apple search spiders to crawl and index your in-app content directly, driving organic, zero-CAC mobile installations.',
+      'Traditional App Store Optimization (ASO) relies solely on keyword stuffing in store metadata. MS Pulse IT’s App-SEO framework bridges store indexing directly with web search engines. We engineer structured Schema.org JSON-LD records on your web domain, configure RFC 3986 Apple App Site Association (AASA) and Android assetlinks.json files, and implement deep-link URL routes. This allows Google and Apple search spiders to crawl and index your in-app content directly, driving organic, low-CAC mobile installations.',
     technicalHighlights: [
       'Dual-indexing across Apple App Store, Google Play, and web search engines',
       'Automated AASA / assetlinks.json CDN caching with HTTP/2 server push',
-      'Average +48% increase in organic app discoverability within 90 days',
+      'Structured deep-link metadata engineered to grow organic discoverability',
     ],
   },
   {
     id: 'universal-deep-linking',
     category: 'App-SEO & Mobile',
-    question: 'How do you guarantee sub-40ms Universal Deep Linking handoffs on iOS and Android?',
+    question: 'How do you minimize Universal Deep Linking handoff latency on iOS and Android?',
     answer:
-      'Most marketing link solutions route users through intermediate tracking redirect domains, adding 600ms–1,200ms of bounce latency. We architect direct OS-level link interceptors. When a link is clicked, the native app parses the URI payload off the main thread using an isolated worker thread. The app resolves state and transitions to the targeted checkout or content screen in under 38 milliseconds, eliminating intermediate browser drop-off.',
+      'Most marketing link solutions route users through intermediate tracking redirect domains, adding hundreds of milliseconds of bounce latency. We architect direct OS-level link interceptors. When a link is clicked, the native app parses the URI payload off the main thread using an isolated worker thread, resolving state and transitioning to the targeted screen almost instantly — eliminating intermediate browser drop-off.',
     technicalHighlights: [
       'Zero-redirect direct OS intent and Universal Link resolution',
       'Dart isolate background parsing preventing UI thread stutter',
-      'Proven 34% reduction in drop-off during high-intent acquisition campaigns',
+      'Eliminates intermediate browser drop-off in high-intent funnels',
     ],
   },
   {
@@ -42,11 +42,11 @@ const FAQ_ITEMS: FaqItem[] = [
     category: 'Cloud & Architecture',
     question: 'What is your architectural strategy for zero-downtime AWS cloud migrations?',
     answer:
-      'We utilize an automated blue-green cutover methodology powered by Terraform and AWS Elastic Kubernetes Service (EKS). First, we establish continuous CDC (Change Data Capture) database replication between your legacy source and our target PostgreSQL cluster. After verifying transaction parity, traffic is incrementally shifted using Cloudflare edge routing and AWS Route 53 weighted DNS records. This eliminates operational maintenance windows and ensures 100% uptime during cutover.',
+      'We utilize an automated blue-green cutover methodology powered by Terraform and AWS Elastic Kubernetes Service (EKS). First, we establish continuous CDC (Change Data Capture) database replication between your legacy source and our target PostgreSQL cluster. After verifying transaction parity, traffic is incrementally shifted using Cloudflare edge routing and AWS Route 53 weighted DNS records. This eliminates operational maintenance windows and keeps your platform serving users throughout cutover.',
     technicalHighlights: [
-      'Terraform Infrastructure as Code (IaC) with immutable state locking',
+      'Terraform Infrastructure as Code (IaC) with state locking',
       'Continuous Change Data Capture (CDC) preventing data divergence',
-      'Automated instantaneous rollback capability with automated canary alarms',
+      'Automated rollback capability with canary alarms',
     ],
   },
   {
@@ -58,7 +58,7 @@ const FAQ_ITEMS: FaqItem[] = [
     technicalHighlights: [
       'Multi-isolate background computation architecture',
       'SQLite WAL mode for non-blocking local persistent caching',
-      'Strict zero-frame-drop guarantee verified through automated CI trace profiling',
+      'Frame-drop budgets enforced through automated CI trace profiling',
     ],
   },
   {
@@ -66,11 +66,11 @@ const FAQ_ITEMS: FaqItem[] = [
     category: 'AI & Data',
     question: 'How does the PulseNeural multi-LLM gateway prevent third-party AI downtime?',
     answer:
-      'Public LLM APIs routinely suffer from quota exhaustion, latency spikes, and transient 503 errors. PulseNeural introduces an intelligent reverse proxy that measures upstream response latency in real time. If the primary model (e.g. Gemini 2.5 Flash) does not stream the initial token within 250ms, the request automatically falls back to a secondary provider (OpenAI GPT-4o-mini) without dropping the client connection. All outputs are strictly validated against deterministic Pydantic schemas.',
+      'Public LLM APIs routinely suffer from quota exhaustion, latency spikes, and transient errors. PulseNeural introduces an intelligent reverse proxy that measures upstream response latency in real time. If the primary model does not stream the initial token within a strict time budget, the request automatically falls back to a secondary provider without dropping the client connection. All outputs are strictly validated against deterministic Pydantic schemas.',
     technicalHighlights: [
-      'Sub-250ms automated multi-provider failover',
-      'pgvector hybrid search caching frequent prompts to eliminate redundant API cost',
-      'Guaranteed deterministic JSON schema compliance with zero hallucinations',
+      'Automated multi-provider failover',
+      'pgvector hybrid search caching frequent prompts to reduce redundant API cost',
+      'Deterministic JSON schema validation on every model response',
     ],
   },
   {
@@ -78,7 +78,7 @@ const FAQ_ITEMS: FaqItem[] = [
     category: 'Security & SLA',
     question: 'What security standards and compliance frameworks are built into your builds?',
     answer:
-      'Every production deployment complies with CIS (Center for Internet Security) benchmarks, SOC 2 Type II controls, and ISO 27001 requirements. We enforce mutual TLS (mTLS) across all Kubernetes pod communications, store all secrets in HashiCorp Vault with dynamic rotation, and automate container vulnerability scans (Trivy) directly within our GitHub Actions CI/CD pipelines. No plaintext secrets or elevated root permissions are ever permitted in production.',
+      'Every production deployment is engineered against CIS (Center for Internet Security) benchmarks and SOC 2 / ISO 27001 control requirements. We enforce mutual TLS (mTLS) across all Kubernetes pod communications, store all secrets in HashiCorp Vault with dynamic rotation, and automate container vulnerability scans (Trivy) directly within our CI/CD pipelines. No plaintext secrets or elevated root permissions are ever permitted in production.',
     technicalHighlights: [
       'Strict Zero-Trust Kubernetes network policies with mTLS',
       'Dynamic automated secret rotation via HashiCorp Vault',
@@ -86,15 +86,63 @@ const FAQ_ITEMS: FaqItem[] = [
     ],
   },
   {
+    id: 'software-scope',
+    category: 'Engagement & Commercial',
+    question: 'What types of software does MS Pulse IT build?',
+    answer:
+      'We are a full-cycle engineering company covering the complete software spectrum: custom enterprise platforms (CRM, ERP, HRM, inventory), web applications and SaaS products, iOS/Android mobile apps, desktop software for Windows/macOS/Linux, real-time media and live streaming platforms, and e-commerce/multi-vendor marketplaces. Every engagement is custom-engineered — we never resell templates or white-label third-party products.',
+    technicalHighlights: [
+      'Enterprise systems: CRM, ERP, HRM, inventory & operations platforms',
+      'Consumer products: web, mobile, desktop & live streaming applications',
+      'Commerce: headless storefronts and multi-vendor marketplace platforms',
+    ],
+  },
+  {
+    id: 'ip-ownership',
+    category: 'Engagement & Commercial',
+    question: 'Who owns the source code and IP?',
+    answer:
+      'You do — 100%. Full intellectual property ownership of every line of source code, design asset, and infrastructure configuration is transferred to your organization upon completion. Throughout the engagement you hold direct git repository push access, so your team can audit, fork, or take over the codebase at any point. No licensing lock-ins, no proprietary runtime dependencies, no hostage clauses.',
+    technicalHighlights: [
+      '100% client IP and source code ownership upon completion',
+      'Direct git repository access from the first sprint',
+      'Zero proprietary lock-in — standard open frameworks only',
+    ],
+  },
+  {
+    id: 'post-launch-maintenance',
+    category: 'Engagement & Commercial',
+    question: 'Do you provide post-launch maintenance?',
+    answer:
+      'Yes. Every production launch includes a dedicated Service Level Agreement (SLA) with defined response windows and bug-fix support. Our team monitors uptime, error rates, and performance regressions, ships patches on a priority cadence, and keeps dependencies, security advisories, and store compliance requirements current — so your platform keeps compounding value after go-live instead of decaying.',
+    technicalHighlights: [
+      'Dedicated SLA with defined incident response windows',
+      'Priority bug-fix support and proactive regression monitoring',
+      'Ongoing dependency, security, and OS/store compliance updates',
+    ],
+  },
+  {
+    id: 'payment-structure',
+    category: 'Engagement & Commercial',
+    question: 'What is your payment structure?',
+    answer:
+      'Milestone-based payments tied directly to sprint deliverables. Instead of large upfront commitments, each invoice maps to a verifiable, working software increment — a scoped prototype, a staging release, a production launch. You pay only as measurable progress ships, keeping cash flow predictable and giving you full leverage to pause, pivot, or re-scope at any milestone boundary.',
+    technicalHighlights: [
+      'Milestone-based payments tied to sprint deliverables',
+      'Every invoice maps to a verifiable working release',
+      'Freedom to pause or re-scope at any milestone boundary',
+    ],
+  },
+  {
     id: 'sprint-velocity-handoff',
     category: 'Security & SLA',
     question: 'How do you handle project sprints, velocity tracking, and intellectual property handoff?',
     answer:
-      'We operate on strict two-week agile sprint cadences with automated CI/CD staging environments provided on day one. You receive full, unencumbered intellectual property (IP) ownership and git repository push access throughout development. Every pull request undergoes peer review, unit tests, and performance benchmark gates before merge. At handover, we provide complete architectural documentation, Terraform runbooks, and an onboarding knowledge transfer session.',
+      'We operate on strict two-week agile sprint cadences with automated CI/CD staging environments provided on day one. You receive full, unencumbered intellectual property (IP) ownership and git repository push access throughout development. Every pull request undergoes peer review, unit tests, and performance benchmark gates before merge. At handover, we provide complete architectural documentation, infrastructure runbooks, and an onboarding knowledge transfer session.',
     technicalHighlights: [
       'Bi-weekly verifiable sprint releases with staging preview environments',
       '100% client intellectual property ownership from day one',
-      'Comprehensive architecture runbooks, API contracts, and team handoff training',
+      'Comprehensive architecture runbooks, API contracts, and handoff training',
     ],
   },
 ];
@@ -107,7 +155,7 @@ export function ExpertiseFaqSection({ onOpenConsultation }: ExpertiseFaqSectionP
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [expandedFaq, setExpandedFaq] = useState<string | null>('aso-vs-app-seo');
 
-  const categories = ['All', 'App-SEO & Mobile', 'Cloud & Architecture', 'AI & Data', 'Security & SLA'];
+  const categories = ['All', 'App-SEO & Mobile', 'Cloud & Architecture', 'AI & Data', 'Security & SLA', 'Engagement & Commercial'];
 
   const filteredFaqs =
     activeCategory === 'All'

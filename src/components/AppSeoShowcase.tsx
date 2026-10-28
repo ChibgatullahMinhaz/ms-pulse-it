@@ -296,7 +296,7 @@ export function AppSeoShowcase({ onOpenConsultation }: { onOpenConsultation: () 
                 <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-100">
                   <div className="flex items-center gap-2 text-xs font-semibold text-emerald-800">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    <span>App Store Optimization Certified</span>
+                    <span>Full App-SEO Coverage</span>
                   </div>
                   <p className="text-[11px] text-emerald-700 mt-1">
                     Full Schema.org, iOS Universal Links & Android App Links configured.

@@ -20,7 +20,7 @@ const TECH_STACK: TechStackItem[] = [
     role: 'Cross-Platform Mobile Engineering',
     description:
       'High-velocity single-codebase mobile applications targeting iOS, Android, and desktop with native 120 FPS frame rates and Dart isolate multithreading.',
-    latencyBadge: '120 FPS Native Target',
+    latencyBadge: 'Native 120 FPS Target',
     icon: Smartphone,
     gradient: 'from-[#00D2FF] to-[#0088CC]',
     features: ['Universal / App Links', 'Background Isolates', 'Offline SQLite Sync'],
@@ -32,7 +32,7 @@ const TECH_STACK: TechStackItem[] = [
     role: 'Enterprise Web & Edge SSR',
     description:
       'React Server Components (RSC) architecture engineered for sub-second Core Web Vitals, dynamic App-SEO structured data injection, and zero-bundle hydration overhead.',
-    latencyBadge: 'Sub-50ms Global TTFB',
+    latencyBadge: 'Edge SSR Rendering',
     icon: Globe,
     gradient: 'from-[#6C5CE7] to-[#4834D4]',
     features: ['App Router SSR', 'Dynamic JSON-LD Schema', 'Turbopack Bundler'],
@@ -44,7 +44,7 @@ const TECH_STACK: TechStackItem[] = [
     role: 'High-Throughput Intelligence Backends',
     description:
       'Asynchronous microservices handling concurrent inference workloads, event stream processing, mathematical modeling, and enterprise data normalization.',
-    latencyBadge: '18k req/sec Throughput',
+    latencyBadge: 'High-Throughput AsyncIO',
     icon: Terminal,
     gradient: 'from-[#00BBE6] to-[#6C5CE7]',
     features: ['AsyncIO Concurrency', 'Pydantic Strict Contracts', 'NumPy & Polars Pipelines'],
@@ -56,7 +56,7 @@ const TECH_STACK: TechStackItem[] = [
     role: 'Generative AI & Agent Workflows',
     description:
       'Multi-model LLM orchestration featuring pgvector semantic search, dynamic model fallback, token usage governors, and real-time streaming response pipelines.',
-    latencyBadge: '140ms Streaming TTFT',
+    latencyBadge: 'Streaming Multi-Model Failover',
     icon: Cpu,
     gradient: 'from-[#00D2FF] to-[#6C5CE7]',
     features: ['Hybrid Vector Search', 'Multi-Provider Failover', 'Deterministic Schema Outputs'],
@@ -68,7 +68,7 @@ const TECH_STACK: TechStackItem[] = [
     role: 'Zero-Downtime Cloud Infrastructure',
     description:
       'Multi-Availability Zone Elastic Kubernetes Service (EKS) clusters provisioned via Terraform with automated horizontal pod autoscaling and GitOps CI/CD.',
-    latencyBadge: '99.98% High Availability SLA',
+    latencyBadge: 'Multi-AZ High Availability',
     icon: Cloud,
     gradient: 'from-[#6C5CE7] to-[#00D2FF]',
     features: ['Terraform IaC', 'Horizontal Pod Autoscaler', 'Automated Blue-Green Deploy'],
@@ -80,7 +80,7 @@ const TECH_STACK: TechStackItem[] = [
     role: 'Relational ACID Core & Vector Store',
     description:
       'Rock-solid relational state management unified with dense HNSW vector index embeddings, automated point-in-time recovery, and connection pooling.',
-    latencyBadge: 'Sub-4ms Query Execution',
+    latencyBadge: 'ACID Core + Vector Search',
     icon: Database,
     gradient: 'from-[#0088CC] to-[#00D2FF]',
     features: ['pgvector HNSW Search', 'Connection Pooling', 'Immutable Audit Trails'],
@@ -92,7 +92,7 @@ const TECH_STACK: TechStackItem[] = [
     role: 'End-to-End Type Safety',
     description:
       'Strict static typing across client, server, and shared API contracts to eliminate runtime regression errors and accelerate enterprise feature delivery.',
-    latencyBadge: '100% Type Coverage',
+    latencyBadge: 'Strict Type Safety',
     icon: Layers,
     gradient: 'from-[#00BBE6] to-[#4834D4]',
     features: ['Strict Null Checks', 'Zod Runtime Validation', 'Shared Monorepo Packages'],
@@ -104,7 +104,7 @@ const TECH_STACK: TechStackItem[] = [
     role: 'Edge Computing & Security Perimeter',
     description:
       'Global Anycast edge network executing lightweight V8 workers, intelligent caching, automated SSL/TLS termination, and DDoS mitigation perimeters.',
-    latencyBadge: '12ms Worldwide Ingress',
+    latencyBadge: 'Global Anycast Ingress',
     icon: ShieldCheck,
     gradient: 'from-[#6C5CE7] to-[#00BBE6]',
     features: ['V8 Edge Workers', 'Enterprise WAF / DDoS', 'Anycast DNS Routing'],

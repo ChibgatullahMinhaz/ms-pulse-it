@@ -31,8 +31,8 @@ const ARCHITECTURE_NODES: ArchitectureNode[] = [
     name: '02. Edge & ASO Gateway',
     category: 'Traffic & Routing',
     icon: Globe,
-    latency: '12ms Global Edge',
-    availability: 'Anycast DNS 100%',
+    latency: 'Global Edge Routing',
+    availability: 'Anycast DNS Network',
     description:
       'Global edge compute network handling deep link resolution, App Clip instantaneous redirects, dynamic Schema.org injection, and DDoS mitigation.',
     protocols: ['Cloudflare Workers', 'TLS 1.3', 'Universal Links', 'JSON-LD Injector']
@@ -42,8 +42,8 @@ const ARCHITECTURE_NODES: ArchitectureNode[] = [
     name: '03. Scalable Microservices',
     category: 'Application Logic',
     icon: Layers,
-    latency: '24ms Service Mesh',
-    availability: '99.98% Multi-Cluster',
+    latency: 'Low-Latency Service Mesh',
+    availability: 'Multi-Cluster Failover',
     description:
       'Decoupled Kubernetes microservices with automated horizontal pod autoscaling, gRPC high-throughput communications, and zero-trust service perimeters.',
     protocols: ['Kubernetes (EKS/GKE)', 'gRPC / Protobuf', 'Docker Containers', 'mTLS']
@@ -53,7 +53,7 @@ const ARCHITECTURE_NODES: ArchitectureNode[] = [
     name: '04. AI & Inference Mesh',
     category: 'Intelligent Processing',
     icon: Cpu,
-    latency: '140ms Streaming TTFT',
+    latency: 'Streaming TTFT Optimized',
     availability: 'Model Failover Redundancy',
     description:
       'Enterprise generative AI agents, vector embeddings, semantic ranking, and automated categorization pipelines with token-rate governance.',
@@ -64,7 +64,7 @@ const ARCHITECTURE_NODES: ArchitectureNode[] = [
     name: '05. Resilient Data Storage',
     category: 'State & Telemetry',
     icon: Database,
-    latency: '4ms Analytical Query',
+    latency: 'Sub-Second Analytics',
     availability: 'Zero-Data-Loss Replication',
     description:
       'Dual-tier database layer uniting transactional ACID PostgreSQL with high-throughput columnar ClickHouse for real-time telemetry streaming.',
@@ -97,14 +97,14 @@ export function ArchitecturePulse() {
         {/* Interactive Architecture Flow Diagram */}
         <div className="neu-raised rounded-3xl p-6 sm:p-10 mb-8 border border-slate-200/80">
           {/* Animated Pulse Beam Visualizer */}
-          <div className="relative mb-10 overflow-hidden rounded-2xl bg-slate-900 p-6 sm:p-8 text-white">
+          <div className="relative mb-10 overflow-hidden rounded-2xl bg-slate-50 border border-slate-200/80 p-6 sm:p-8">
             <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#00D2FF]">
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#00BBE6]">
                 <Activity className="w-4 h-4 animate-pulse" />
-                <span>LIVE ARCHITECTURE PULSE STREAM</span>
+                <span>ARCHITECTURE PIPELINE FLOW</span>
               </div>
-              <div className="text-xs font-mono text-slate-400">
-                Avg Pipeline Latency: <span className="text-white font-bold">48ms</span>
+              <div className="text-xs font-mono text-slate-500">
+                Reference Pipeline: <span className="text-[#1A1D21] font-bold">5-Tier Resilience Model</span>
               </div>
             </div>
 
@@ -119,18 +119,18 @@ export function ArchitecturePulse() {
                     onClick={() => setSelectedNode(node)}
                     className={`p-4 rounded-xl text-left transition-all duration-200 relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] ${
                       isSelected
-                        ? 'bg-slate-800 ring-2 ring-[#00D2FF] shadow-[0_0_20px_rgba(0,210,255,0.3)]'
-                        : 'bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60'
+                        ? 'bg-white ring-2 ring-[#00D2FF] shadow-[0_0_20px_rgba(0,210,255,0.15)]'
+                        : 'bg-white/70 hover:bg-white border border-slate-200/80'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <Icon className={`w-5 h-5 ${isSelected ? 'text-[#00D2FF]' : 'text-slate-400 group-hover:text-slate-200'}`} />
+                      <Icon className={`w-5 h-5 ${isSelected ? 'text-[#00BBE6]' : 'text-slate-400 group-hover:text-slate-600'}`} />
                       <span className="text-[11px] font-mono text-slate-400">0{index + 1}</span>
                     </div>
-                    <div className="text-xs font-bold text-white truncate">
+                    <div className="text-xs font-bold text-[#1A1D21] truncate">
                       {node.name.split('. ')[1]}
                     </div>
-                    <div className="text-[11px] text-slate-400 truncate mt-0.5">
+                    <div className="text-[11px] text-slate-500 truncate mt-0.5">
                       {node.category}
                     </div>
                   </button>
@@ -139,13 +139,13 @@ export function ArchitecturePulse() {
             </div>
 
             {/* Glowing animated wave bar under cards */}
-            <div className="mt-6 pt-4 border-t border-slate-800 relative">
-              <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden relative">
+            <div className="mt-6 pt-4 border-t border-slate-200/80 relative">
+              <div className="h-1.5 w-full bg-slate-200/80 rounded-full overflow-hidden relative">
                 <div className="absolute top-0 bottom-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-[#00D2FF] to-transparent animate-[pulseWave_3s_ease-in-out_infinite]" />
               </div>
-              <div className="flex justify-between items-center text-[11px] text-slate-400 mt-2">
+              <div className="flex justify-between items-center text-[11px] text-slate-500 mt-2">
                 <span>Ingress: Edge Entry</span>
-                <span className="text-[#00D2FF]">Real-Time Pulse Routing Active</span>
+                <span className="text-[#00BBE6]">Real-Time Pulse Routing Active</span>
                 <span>Egress: Distributed Storage</span>
               </div>
             </div>
@@ -189,7 +189,7 @@ export function ArchitecturePulse() {
                   {selectedNode.latency}
                 </div>
                 <p className="text-xs text-slate-500 mt-1">
-                  99th percentile across production clusters
+                  Engineering target for every production build
                 </p>
               </div>
 

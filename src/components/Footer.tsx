@@ -18,13 +18,13 @@ export function Footer({ onOpenConsultation }: { onOpenConsultation: () => void 
               <PulseLogo size="md" />
             </a>
             <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
-              MS Pulse IT is a premier enterprise IT agency specializing in Next-Gen Software Engineering, App Store Optimization (ASO), Cloud Architecture, and AI-driven scalable solutions.
+              MS Pulse IT is a full-cycle software engineering company building custom enterprise platforms (CRM/ERP), web & mobile applications, desktop software, real-time media infrastructure, and e-commerce marketplaces — including products we ship and operate ourselves.
             </p>
             <div className="flex items-center gap-2 text-xs text-slate-500 pt-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
-              <span>All Systems Operational</span>
+              <span>Currently accepting new engagements</span>
               <span className="text-slate-300">·</span>
-              <span className="font-mono text-[11px]">Pulse Latency: 14ms</span>
+              <span className="font-mono text-[11px]">Response within 24 hours</span>
             </div>
           </div>
 
@@ -36,27 +36,27 @@ export function Footer({ onOpenConsultation }: { onOpenConsultation: () => void 
             <ul className="space-y-2 text-xs">
               <li>
                 <a href="#services" className="hover:text-[#00BBE6] transition-colors">
-                  App Store Optimization (ASO)
+                  Custom Enterprise Software (CRM / ERP)
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-[#00BBE6] transition-colors">
-                  Next.js Enterprise Web
+                  Web Platforms & SaaS
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-[#00BBE6] transition-colors">
-                  Zero-Trust DevSecOps
+                  Mobile & Desktop Applications
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-[#00BBE6] transition-colors">
-                  Real-time Telemetry & Data
+                  Live Streaming & Real-Time Media
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-[#00BBE6] transition-colors">
-                  Universal Deep Linking
+                  E-Commerce & Marketplaces
                 </a>
               </li>
             </ul>
@@ -91,11 +91,6 @@ export function Footer({ onOpenConsultation }: { onOpenConsultation: () => void 
               <li>
                 <a href="#tech-insights" className="hover:text-[#00BBE6] transition-colors">
                   Tech Insights & Blog
-                </a>
-              </li>
-              <li>
-                <a href="#team" className="hover:text-[#00BBE6] transition-colors">
-                  Pulse Engineering Team
                 </a>
               </li>
               <li>

@@ -51,6 +51,7 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
 
     if (options.compliance === 'soc2') baseWeeks += 2;
     if (options.compliance === 'hipaa') baseWeeks += 3;
+    if (options.compliance === 'pci-dss') baseWeeks += 3;
 
     if (options.timeline === 'accelerated') {
       baseWeeks = Math.max(4, Math.round(baseWeeks * 0.7));
@@ -60,7 +61,7 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
       weeks: baseWeeks,
       trackName,
       stack,
-      uptimeSla: options.scaleTier === 'enterprise' ? '99.99%' : '99.95%',
+      uptimeSla: options.scaleTier === 'enterprise' ? 'High-Availability' : 'Standard',
       targetCWV: '99 / 100',
     };
   };
@@ -86,13 +87,13 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
             <span className="w-1.5 h-1.5 rounded-full bg-[#6C5CE7]" />
             <span>Interactive Architecture Planner</span>
             <span aria-hidden="true">·</span>
-            <span>Real-Time Estimation</span>
+            <span>Indicative Estimation</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A1D21] tracking-tight [text-wrap:balance]">
-            Configure Your Digital Transformation Scope
+            Configure Your Project Scope
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Select your architectural parameters, target scale, and compliance requirements to immediately project project sprint velocity and recommended engineering stack.
+            Select your architectural parameters, target scale, and compliance requirements to get an indicative projection of sprint velocity and recommended engineering stack.
           </p>
         </div>
 
@@ -108,10 +109,10 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {[
-                    { id: 'app-aso', label: 'App Development & ASO Engine' },
-                    { id: 'cloud-architecture', label: 'Next.js Web & Cloud Services' },
+                    { id: 'app-aso', label: 'Mobile & Desktop Applications' },
+                    { id: 'cloud-architecture', label: 'Web Platforms & SaaS' },
                     { id: 'ai-enterprise', label: 'AI & Automated Workflows' },
-                    { id: 'full-ecosystem', label: 'Full Enterprise Ecosystem' },
+                    { id: 'full-ecosystem', label: 'Enterprise Ecosystem (CRM / ERP)' },
                   ].map((track) => (
                     <button
                       key={track.id}
@@ -164,14 +165,14 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
               {/* Compliance & Security */}
               <div>
                 <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
-                  3. Security & Regulatory Compliance
+                  3. Security & Regulatory Requirements
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {[
-                    { id: 'standard', label: 'Standard CIS' },
-                    { id: 'soc2', label: 'SOC 2 Type II' },
-                    { id: 'hipaa', label: 'HIPAA Health' },
-                    { id: 'pci-dss', label: 'PCI-DSS Pay' },
+                    { id: 'standard', label: 'Standard Security' },
+                    { id: 'soc2', label: 'SOC 2 Readiness' },
+                    { id: 'hipaa', label: 'HIPAA Readiness' },
+                    { id: 'pci-dss', label: 'PCI-DSS Readiness' },
                   ].map((comp) => (
                     <button
                       key={comp.id}
@@ -193,7 +194,7 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
               {/* Delivery Velocity */}
               <div>
                 <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
-                  4. Deployment Velocity
+                  4. Delivery Velocity
                 </label>
                 <div className="grid grid-cols-2 gap-2.5">
                   {[
@@ -230,7 +231,7 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
                     <span>Projected Scope Blueprint</span>
                   </div>
                   <span className="text-[11px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">
-                    Engineered Estimate
+                    Indicative Estimate
                   </span>
                 </div>
 
@@ -241,7 +242,7 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
                     ~{calculated.weeks} <span className="text-lg font-normal text-slate-600">Sprints</span>
                   </div>
                   <p className="text-xs text-slate-500 mt-1">
-                    From architectural audit to production deployment
+                    From architectural audit to production deployment (indicative)
                   </p>
                 </div>
 
@@ -260,10 +261,10 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
                   <div className="flex items-center justify-between text-xs p-3 rounded-xl bg-white/70 border border-slate-200/60">
                     <span className="text-slate-600 flex items-center gap-1.5">
                       <Shield className="w-3.5 h-3.5 text-[#6C5CE7]" />
-                      Availability Guarantee
+                      Availability Model
                     </span>
                     <span className="font-mono-num font-bold text-slate-900">
-                      {calculated.uptimeSla} SLA
+                      {calculated.uptimeSla}
                     </span>
                   </div>
 
@@ -290,7 +291,7 @@ export function ProjectEstimator({ onPreFillConsultation }: ProjectEstimatorProp
                   onClick={handleLaunchConsultation}
                   className="w-full py-3.5 px-4 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 transition-colors shadow-md flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF]"
                 >
-                  <span>Lock In Scope & Book Consultation</span>
+                  <span>                  Discuss This Scope & Book Consultation</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#00D2FF]" />
                 </button>
               </div>

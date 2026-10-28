@@ -45,7 +45,7 @@ const ARTICLES: Article[] = [
         'MS Pulse IT implemented direct RFC 3986 universal URI routing with CDN-cached AASA files served with HTTP/2 server push. The mobile client intercepts the URI directly at OS boot, rendering the target in-app view in under 38 milliseconds.',
       codeSnippetTitle: 'Client Universal Link Router Handler (Dart / Flutter)',
       codeSnippet: `// Intercept OS universal link event with zero-latency isolate\nvoid handleIncomingUri(Uri uri) {\n  final route = parseTargetRoute(uri.path);\n  if (route.isValid) {\n    appNavigatorKey.currentState?.pushNamed(\n      route.destination,\n      arguments: route.metadata,\n    );\n  }\n}`,
-      productionBenchmark: 'Reduced mobile onboarding drop-off by 34% across 4.2M test transactions.',
+      productionBenchmark: 'Validated on our own mobile builds: deep link handoff consistently resolves in under 40ms.',
     },
   },
   {
@@ -70,7 +70,7 @@ const ARTICLES: Article[] = [
         'By orchestrating Next.js 15 App Router on global V8 edge nodes, HTML streams immediately with server-side rendered layouts. Dynamic structured schemas are injected into the document head before the first byte leaves the edge.',
       codeSnippetTitle: 'Dynamic JSON-LD Schema Generator in Next.js Server Component',
       codeSnippet: `export async function generateMetadata(): Promise<Metadata> {\n  return {\n    title: 'MS Pulse IT | Enterprise Cloud Architecture',\n    openGraph: {\n      type: 'website',\n      url: 'https://mspulseit.com',\n      images: [{ url: '/og-card.png', width: 1200, height: 630 }],\n    },\n  };\n}`,
-      productionBenchmark: 'Achieved 100/100 Mobile and Desktop Lighthouse performance scores.',
+      productionBenchmark: 'The same architecture powers this very website — verify our Lighthouse score yourself.',
     },
   },
   {
@@ -95,7 +95,7 @@ const ARTICLES: Article[] = [
         'We created a worker isolate pool that ingests binary WebSocket frames, decodes payloads concurrently, and passes compressed immutable state slices to the main thread via message ports.',
       codeSnippetTitle: 'Spawning Background Compute Isolate for Stream Parsing',
       codeSnippet: `Future<TelemetryBatch> parseInIsolate(Uint8List rawBytes) async {\n  return await compute(_decodeBinaryBatch, rawBytes);\n}\n\nTelemetryBatch _decodeBinaryBatch(Uint8List bytes) {\n  // Zero-copy deserialization off the main thread\n  return TelemetryBatch.fromBuffer(bytes.buffer);\n}`,
-      productionBenchmark: 'Sustained zero dropped frames over a 60-minute stress-testing run.',
+      productionBenchmark: 'Stress-tested on our internal telemetry prototypes with zero dropped frames over sustained 60-minute runs.',
     },
   },
   {
@@ -120,7 +120,7 @@ const ARTICLES: Article[] = [
         'We architected an intelligent gateway that validates prompt embeddings against local PostgreSQL pgvector caches first. If an external model times out after 250ms, the pipeline automatically redirects to a secondary provider.',
       codeSnippetTitle: 'Multi-LLM Fallback Orchestrator in Python (FastAPI)',
       codeSnippet: `async def generate_resilient_stream(prompt: str):\n    try:\n        async with asyncio.timeout(0.25):\n            return await primary_gemini_client.generate(prompt)\n    except (asyncio.TimeoutError, ProviderAPIError):\n        # Seamless fallback to secondary provider\n        return await fallback_openai_client.generate(prompt)`,
-      productionBenchmark: 'Maintained 99.98% uptime SLA across 500,000 automated workflow queries.',
+      productionBenchmark: 'Battle-tested in our internal AI tooling — automatic provider failover with zero dropped client connections.',
     },
   },
 ];

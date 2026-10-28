@@ -1,84 +1,146 @@
 'use client';
 
 import { useState } from 'react';
-import { Smartphone, Cpu, ShieldCheck, Database, ArrowRight, CheckCircle2, X } from 'lucide-react';
+import { Building2, Globe, Smartphone, Monitor, Radio, ShoppingCart, ArrowRight, CheckCircle2, X } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 const SERVICES: ServiceItem[] = [
   {
-    id: 'app-aso',
-    category: 'app-aso',
-    title: '01. App Development & ASO Engine',
-    subtitle: 'High-Conversion Mobile Systems & Organic Store Dominance',
+    id: 'enterprise-software',
+    category: 'enterprise',
+    title: '01. Custom Enterprise Software',
+    subtitle: 'CRM, ERP & Internal Business Platforms',
     description:
-      'We architect high-performance native and cross-platform mobile applications backed by data-driven App Store Optimization (ASO) algorithms that elevate visibility, organic keyword rank, and store conversion.',
+      'We design and engineer bespoke CRM, ERP, and operations platforms that mirror your exact business workflows — replacing spreadsheet chaos and rigid off-the-shelf tools with one unified, automated system.',
+    problem:
+      'Off-the-shelf CRM/ERP licenses force your team to adapt to the software — manual data re-entry, disconnected departments, and per-seat fees that scale faster than your revenue.',
+    solution:
+      'A custom platform engineered around your workflows — automated pipelines, role-based dashboards, and full data ownership that eliminate repetitive manual work and recurring per-seat license fees.',
+    techStack: ['TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
+    keyOutcomes: [
+      'Custom CRM/ERP modules mapped to your exact operational workflows',
+      'Automated invoicing, inventory, HR, and approval pipelines',
+      'Role-based access control with immutable audit trails',
+      'Seamless migration from legacy spreadsheets and off-the-shelf tools'
+    ],
+    metricHighlight: {
+      value: '100%',
+      label: 'Workflow coverage mapped to your operations'
+    }
+  },
+  {
+    id: 'web-saas',
+    category: 'web',
+    title: '02. Web Platforms & SaaS Engineering',
+    subtitle: 'High-Performance Web Apps, Portals & SaaS Products',
+    description:
+      'From marketing sites to multi-tenant SaaS platforms, we engineer server-driven web applications with sub-second Core Web Vitals, elastic cloud scaling, and AI-assisted workflows built in.',
+    problem:
+      'Slow, monolithic web platforms bleed revenue — every 100ms of latency costs up to 7% in conversion, and fragile codebases make every new feature slower and riskier to ship.',
+    solution:
+      'Server-driven Next.js architecture targeting 99+ Lighthouse and sub-50ms server response — a modular foundation where new features ship weekly without breaking what already works.',
+    techStack: ['Next.js App Router', 'TypeScript', 'Node.js', 'Google Cloud Run', 'AWS ECS', 'OpenAI / Claude / Gemini SDKs'],
+    keyOutcomes: [
+      'Sub-second First Contentful Paint and 99+ Lighthouse performance targets',
+      'Multi-tenant SaaS architecture with elastic database scaling',
+      'Intelligent document processing and automated generative AI pipelines',
+      'Server-driven rendering with zero client-side payload bloat'
+    ],
+    metricHighlight: {
+      value: '99+',
+      label: 'Lighthouse performance target on every build'
+    }
+  },
+  {
+    id: 'mobile-apps',
+    category: 'mobile',
+    title: '03. Mobile App Engineering',
+    subtitle: 'Native & Cross-Platform Apps with Store Dominance',
+    description:
+      'We architect high-performance iOS and Android applications — native or cross-platform — backed by data-driven App Store Optimization that elevates visibility, organic rank, and store conversion.',
+    problem:
+      'Template-built apps bleed store rankings — 4s+ load times, crashing sessions, and paid acquisition costs that never compound into owned organic growth.',
+    solution:
+      'A custom-engineered application with App-SEO indexing that cuts load time under 1 second, compounds organic store visibility, and converts installs into zero-CAC revenue.',
     techStack: ['Swift', 'Kotlin', 'React Native', 'Flutter', 'Apple Search Ads API', 'Deep Linking (Branch/Adjust)'],
     keyOutcomes: [
       'Top 3 organic keyword ranking for high-intent search queries',
       'Universal Links & App Clips sub-50ms instant routing',
-      'Continuous A/B testing on store metadata, icons, and localized screenshots',
-      'Crash-free session rate sustained above 99.94%'
+      'Offline-first synchronization with background worker isolates',
+      'Crash-free session engineering with automated CI profiling gates'
     ],
     metricHighlight: {
-      value: '+184%',
-      label: 'Average organic install velocity within 90 days'
+      value: '99.9%',
+      label: 'Crash-free session rate engineering target'
     }
   },
   {
-    id: 'cloud-ai',
-    category: 'cloud-ai',
-    title: '02. AI & Scalable Web Architecture',
-    subtitle: 'Next.js App Router, SSR, and Distributed Cloud Microservices',
+    id: 'desktop-apps',
+    category: 'desktop',
+    title: '04. Desktop Application Development',
+    subtitle: 'Windows, macOS & Linux Business Software',
     description:
-      'Engineered for sub-second Core Web Vitals and resilient throughput. We build modular web platforms and AI-driven workflow engines leveraging modern Next.js, serverless edge networks, and fine-tuned LLM agents.',
-    techStack: ['Next.js App Router', 'TypeScript', 'Node.js', 'Google Cloud Run', 'AWS ECS', 'OpenAI / Claude / Gemini SDKs'],
+      'We build production-grade desktop applications — from internal tooling and POS systems to hardware-integrated control panels — with native performance and automatic cross-platform updates.',
+    problem:
+      'Browser-only tools break down in real operations — no offline mode, no hardware access, and warehouse/point-of-sale teams left refreshing tabs when the internet drops.',
+    solution:
+      'Native-performance desktop software with offline-first storage, direct hardware integration (printers, scanners, serial devices), and silent auto-updates across your entire fleet.',
+    techStack: ['Electron', 'Tauri', 'C# / .NET', 'Rust', 'SQLite', 'Auto-Update Pipelines'],
     keyOutcomes: [
-      'Sub-50ms First Contentful Paint (FCP) and 99+ Lighthouse performance',
-      'Server-driven architecture with zero client-side payload bloat',
-      'Intelligent document processing and automated generative AI pipelines',
-      'Elastic multi-tenant database scaling with instant failover'
+      'Offline-first architecture with encrypted local SQLite storage',
+      'Direct hardware integration — printers, scanners, POS terminals',
+      'Silent auto-update rollout across Windows, macOS, and Linux fleets',
+      'Native OS performance with a minimal memory footprint'
     ],
     metricHighlight: {
-      value: '42ms',
-      label: 'Median server-rendered response time globally'
+      value: 'Offline',
+      label: 'First-class continuity for field & POS teams'
     }
   },
   {
-    id: 'security',
-    category: 'security',
-    title: '03. Zero-Trust Security & DevSecOps',
-    subtitle: 'Continuous Compliance, Infrastructure as Code & Pen-Testing',
+    id: 'live-media',
+    category: 'media',
+    title: '05. Real-Time Media & Live Streaming',
+    subtitle: 'Broadcast-Grade Video, Voice & Interactive Live Platforms',
     description:
-      'Hardened cloud infrastructure engineered to meet stringent SOC 2 Type II, ISO 27001, and HIPAA compliance mandates through automated vulnerability scanning and cryptographically isolated network perimeters.',
-    techStack: ['Terraform', 'Kubernetes (K8s)', 'HashiCorp Vault', 'WAF & Cloudflare', 'OIDC & Okta', 'Datadog'],
+      'We engineer low-latency live streaming and real-time communication platforms — live commerce, virtual events, telehealth, and interactive broadcasting — built on our own production-proven LiveCore media engine.',
+    problem:
+      'Generic streaming SDKs cap your growth — per-minute pricing that punishes success, 3s+ latency that kills live interaction, and zero control over your own media infrastructure.',
+    solution:
+      'A self-owned real-time media platform on our LiveCore engine — sub-300ms interactive latency, unlimited scaling without per-minute SDK fees, and full control of your streaming pipeline.',
+    techStack: ['WebRTC', 'SFU Media Servers', 'LiveCore Engine', 'FFmpeg', 'HLS / LL-HLS', 'Kubernetes'],
     keyOutcomes: [
-      'Continuous compliance audit readiness with automated evidence collection',
-      'Automated secret rotation and role-based zero-trust network policies',
-      'Multi-region automated failover recovery under 3 minutes',
-      'End-to-end telemetry encryption and immutable audit logs'
+      'Sub-300ms glass-to-glass latency for real-time interaction',
+      'High-concurrency edge nodes with adaptive bitrate scaling',
+      'Live commerce, virtual events, and telehealth-ready modules',
+      'Zero per-minute SDK fees — you own the media infrastructure'
     ],
     metricHighlight: {
-      value: '100%',
-      label: 'Audit pass rate for SOC 2 Type II and HIPAA frameworks'
+      value: '<300ms',
+      label: 'Latency achieved on our own LiveCore engine'
     }
   },
   {
-    id: 'data',
-    category: 'data',
-    title: '04. Real-Time Telemetry & Data Platforms',
-    subtitle: 'Event-Driven Streaming & Enterprise Decision Intelligence',
+    id: 'ecommerce',
+    category: 'ecommerce',
+    title: '06. E-Commerce & Multi-Vendor Marketplaces',
+    subtitle: 'High-Conversion Storefronts & Marketplace Platforms',
     description:
-      'Transform high-volume operational events into millisecond analytical insights. We engineer event-driven pipelines, streaming telemetry brokers, and unified reporting warehouses that power intelligent business decisions.',
-    techStack: ['Apache Kafka', 'ClickHouse', 'PostgreSQL', 'DuckDB', 'Apache Spark', 'Snowflake'],
+      'We build headless e-commerce storefronts and full multi-vendor marketplace platforms — vendor dashboards, split payments, logistics integration — engineered for sub-second loads and maximum checkout conversion.',
+    problem:
+      'Legacy storefronts and bloated marketplace themes leak revenue at every step — 4s+ page loads, 7-step checkouts, and cart abandonment rates above 65%.',
+    solution:
+      'A headless commerce engine with one-page checkout and edge-cached catalog — proven on our own multi-vendor marketplace: -81% load time and a perfect 100 Lighthouse score.',
+    techStack: ['Next.js', 'Headless Commerce', 'Stripe / SSLCommerz', 'PostgreSQL', 'Redis', 'Edge CDN'],
     keyOutcomes: [
-      'Low-latency event ingestion supporting 20,000+ events per second',
-      'Sub-second analytical queries on terabyte-scale datasets',
-      'Continuous anomaly detection with automated alert orchestration',
-      'Zero-data-loss distributed replication with cryptographic integrity'
+      'Multi-vendor dashboards with automated commission & split payouts',
+      'One-page checkout with wallet express payment support',
+      'Sub-second catalog browsing across large SKU inventories',
+      'Integrated logistics, SMS/Email notifications, and fraud screening'
     ],
     metricHighlight: {
-      value: '20k/s',
-      label: 'Sustained event stream throughput per node'
+      value: '0.9s',
+      label: 'Load time on our own PulseCommerce marketplace'
     }
   }
 ];
@@ -99,13 +161,13 @@ export function ServicesSection({ onSelectServiceForConsultation }: ServicesSect
             <span className="w-1.5 h-1.5 rounded-full bg-[#6C5CE7]" />
             <span>Core Capabilities</span>
             <span aria-hidden="true">·</span>
-            <span>Enterprise IT & App-SEO</span>
+            <span>Full-Cycle IT Solutions</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A1D21] tracking-tight [text-wrap:balance]">
-            Engineering Built for Critical Digital Infrastructure
+            One Engineering Partner for Every Digital Product
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            From high-velocity App Store visibility to zero-trust cloud microservices, MS Pulse IT engineers full-spectrum software solutions that scale without degradation.
+            From enterprise CRM/ERP platforms and desktop software to mobile apps, live streaming infrastructure, and multi-vendor marketplaces — MS Pulse IT engineers full-spectrum solutions that scale without degradation.
           </p>
         </div>
 
@@ -126,10 +188,12 @@ export function ServicesSection({ onSelectServiceForConsultation }: ServicesSect
                     {service.title}
                   </h3>
                   <div className="p-2 rounded-xl bg-slate-50 text-slate-700 group-hover:text-[#00BBE6] transition-colors">
-                    {service.id === 'app-aso' && <Smartphone className="w-5 h-5 text-[#00BBE6]" />}
-                    {service.id === 'cloud-ai' && <Cpu className="w-5 h-5 text-[#6C5CE7]" />}
-                    {service.id === 'security' && <ShieldCheck className="w-5 h-5 text-[#00BBE6]" />}
-                    {service.id === 'data' && <Database className="w-5 h-5 text-[#6C5CE7]" />}
+                    {service.id === 'enterprise-software' && <Building2 className="w-5 h-5 text-[#00BBE6]" />}
+                    {service.id === 'web-saas' && <Globe className="w-5 h-5 text-[#6C5CE7]" />}
+                    {service.id === 'mobile-apps' && <Smartphone className="w-5 h-5 text-[#00BBE6]" />}
+                    {service.id === 'desktop-apps' && <Monitor className="w-5 h-5 text-[#6C5CE7]" />}
+                    {service.id === 'live-media' && <Radio className="w-5 h-5 text-[#00BBE6]" />}
+                    {service.id === 'ecommerce' && <ShoppingCart className="w-5 h-5 text-[#6C5CE7]" />}
                   </div>
                 </div>
 
@@ -137,9 +201,25 @@ export function ServicesSection({ onSelectServiceForConsultation }: ServicesSect
                   {service.subtitle}
                 </p>
 
-                <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                <p className="text-sm text-slate-600 leading-relaxed mb-5">
                   {service.description}
                 </p>
+
+                {/* Problem → Solution Conversion Micro-Copy */}
+                <div className="space-y-2.5 mb-6">
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-red-700 bg-red-50 border border-red-100 px-1.5 py-0.5 rounded shrink-0 mt-0.5">
+                      Problem
+                    </span>
+                    <p className="text-xs text-slate-600 leading-relaxed">{service.problem}</p>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-cyan-50/50 border border-cyan-100">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-800 bg-cyan-100/70 border border-cyan-200 px-1.5 py-0.5 rounded shrink-0 mt-0.5">
+                      Solution & Outcome
+                    </span>
+                    <p className="text-xs text-slate-700 leading-relaxed">{service.solution}</p>
+                  </div>
+                </div>
 
                 {/* Key Technical Outcomes */}
                 <div className="space-y-2 mb-6">

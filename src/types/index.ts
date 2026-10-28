@@ -1,4 +1,4 @@
-export type ServiceCategory = 'app-aso' | 'cloud-ai' | 'security' | 'data';
+export type ServiceCategory = 'enterprise' | 'web' | 'mobile' | 'desktop' | 'media' | 'ecommerce';
 
 export interface ServiceItem {
   id: string;
@@ -6,6 +6,8 @@ export interface ServiceItem {
   title: string;
   subtitle: string;
   description: string;
+  problem: string;
+  solution: string;
   techStack: string[];
   keyOutcomes: string[];
   metricHighlight: {

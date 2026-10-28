@@ -21,7 +21,7 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
     fullName: '',
     email: '',
     company: '',
-    projectTrack: 'Mobile App Development & App Store Optimization',
+    projectTrack: 'Custom Enterprise Software (CRM / ERP)',
     scaleTier: 'Scale-Up (50k - 500k MAU)',
     timeline: 'Standard Agile Cadence',
     targetPlatforms: ['iOS', 'Android', 'Web (Next.js)'],
@@ -298,17 +298,23 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
                     onChange={(e) => setFormData({ ...formData, projectTrack: e.target.value })}
                     className="w-full px-4 py-2.5 text-sm rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-[#00D2FF] focus:outline-none transition-colors"
                   >
-                    <option value="Mobile App Development & App Store Optimization">
-                      Mobile App Development & App Store Optimization
+                    <option value="Custom Enterprise Software (CRM / ERP)">
+                      Custom Enterprise Software (CRM / ERP)
                     </option>
-                    <option value="Next.js Enterprise Web & Cloud Microservices">
-                      Next.js Enterprise Web & Cloud Microservices
+                    <option value="Web Platform or SaaS Product">
+                      Web Platform or SaaS Product
                     </option>
-                    <option value="Generative AI & Intelligent Workflow Automation">
-                      Generative AI & Intelligent Workflow Automation
+                    <option value="Mobile App (iOS / Android)">
+                      Mobile App (iOS / Android)
                     </option>
-                    <option value="Zero-Trust Infrastructure & DevSecOps">
-                      Zero-Trust Infrastructure & DevSecOps
+                    <option value="Desktop Application (Windows / macOS / Linux)">
+                      Desktop Application (Windows / macOS / Linux)
+                    </option>
+                    <option value="Live Streaming & Real-Time Media Platform">
+                      Live Streaming & Real-Time Media Platform
+                    </option>
+                    <option value="E-Commerce / Multi-Vendor Marketplace">
+                      E-Commerce / Multi-Vendor Marketplace
                     </option>
                   </select>
                 </div>
@@ -402,6 +408,11 @@ export function ConsultationModal({ isOpen, onClose, preFilledScope }: Consultat
                     )}
                   </button>
                 </div>
+
+                {/* Trust Micro-Copy */}
+                <p className="pt-3 text-center text-[11px] text-slate-400">
+                  Free 30-min Technical Consultation • Response within 24 Hours • Strict NDA Protection
+                </p>
               </form>
             )}
           </div>
