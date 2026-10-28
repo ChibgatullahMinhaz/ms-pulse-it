@@ -5,8 +5,7 @@ import { Smartphone, Globe, Cpu, Cloud, ExternalLink, ArrowRight, Play, CheckCir
 import { Tilt3D } from './Tilt3D';
 
 const MS_SHOP_LIVE_URL = 'https://ms-shop.store/';
-// TODO: set the LiveCore live demo URL once the public demo deployment is ready
-const LIVECORE_DEMO_URL: string | null = null;
+const LIVECORE_DEMO_URL: string | null = "https://livecore.cloud";
 
 interface FlagshipSpec {
   id: string;
