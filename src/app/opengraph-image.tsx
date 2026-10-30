@@ -1,10 +1,15 @@
 import { ImageResponse } from 'next/og';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
 
 export const alt = 'MS Pulse IT – Enterprise IT, App-SEO & Digital Engineering';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const logoData = await readFile(path.join(process.cwd(), 'public', 'mspulseit.png'));
+  const logoSrc = `data:image/png;base64,${logoData.toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -23,26 +28,19 @@ export default function OpengraphImage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <div
             style={{
-              width: '72px',
-              height: '72px',
+              width: '84px',
+              height: '84px',
               borderRadius: '18px',
-              background: 'linear-gradient(135deg, #23272F, #0D1522)',
+              background: 'white',
               border: '1px solid rgba(0, 210, 255, 0.35)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              overflow: 'hidden',
             }}
           >
-            <svg width="48" height="48" viewBox="0 0 64 64">
-              <path
-                d="M10 40 L19 40 L25 26 L31 50 L37 14 L43 40 L54 40"
-                stroke="#00D2FF"
-                strokeWidth="4.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-            </svg>
+            {/* Official MS Pulse IT logo — used as-is */}
+            <img src={logoSrc} width={76} height={76} style={{ objectFit: 'contain' }} alt="" />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ color: 'white', fontSize: '34px', fontWeight: 800, letterSpacing: '2px' }}>

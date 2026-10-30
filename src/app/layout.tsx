@@ -13,23 +13,22 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://mspulseit.com'),
   title: {
-    default: 'MS Pulse IT – Enterprise IT, App-SEO & Digital Engineering',
+    default: 'MS Pulse IT – Custom Software, Web & Mobile App Development Agency',
     template: '%s | MS Pulse IT',
   },
   description:
-    'High-performance enterprise IT agency specializing in Next-Gen Software Engineering, App Store Optimization (ASO), Cloud Architecture, and AI-driven scalable solutions.',
+    'Full-cycle software engineering agency building enterprise platforms (CRM/ERP), web & mobile apps, real-time media infrastructure, and multi-vendor marketplaces — proven on our own production systems: MS Shop (0.9s load) and LiveCore (<300ms latency).',
   keywords: [
-    'IT Agency',
-    'App Store Optimization',
-    'ASO',
-    'Next.js 16 Development',
-    'Cloud Architecture',
+    'Software Development Agency',
+    'Custom Software Development',
     'Enterprise Software',
-    'MS Pulse IT',
+    'Web Application Development',
     'Mobile App Development',
-    'Digital Transformation',
-    'Flutter 120 FPS',
-    'RFC 3986 Deep Linking',
+    'Multi-Vendor Marketplace Development',
+    'Real-Time Media Server',
+    'WebRTC Development',
+    'Next.js Development',
+    'MS Pulse IT',
   ],
   authors: [{ name: 'MS Pulse IT Engineering', url: 'https://mspulseit.com' }],
   creator: 'MS Pulse IT Corporation',
@@ -53,17 +52,17 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://mspulseit.com',
     siteName: 'MS Pulse IT',
-    title: 'MS Pulse IT – Enterprise IT, App-SEO & Digital Engineering',
+    title: 'MS Pulse IT – Custom Software, Web & Mobile App Development Agency',
     description:
-      'Transforming visions into digital pulse. Enterprise software engineering, App Store Optimization (ASO), and AI-driven scalable digital solutions.',
+      'Enterprise platforms, web & mobile apps, and real-time media infrastructure — proven on our own production products: MS Shop (0.9s load) and LiveCore (<300ms latency).',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@MSPulseIT',
     creator: '@MSPulseIT',
-    title: 'MS Pulse IT – Enterprise IT, App-SEO & Digital Engineering',
+    title: 'MS Pulse IT – Custom Software, Web & Mobile App Development Agency',
     description:
-      'Transforming visions into digital pulse. Enterprise software engineering, App Store Optimization (ASO), and AI-driven scalable digital solutions.',
+      'Enterprise platforms, web & mobile apps, and real-time media infrastructure — proven on our own production products: MS Shop (0.9s load) and LiveCore (<300ms latency).',
   },
 };
 
@@ -80,7 +79,7 @@ export default function RootLayout({
         '@id': 'https://mspulseit.com/#organization',
         name: 'MS Pulse IT',
         url: 'https://mspulseit.com',
-        logo: 'https://mspulseit.com/logo.svg',
+        logo: 'https://mspulseit.com/mspulseit.webp',
         description:
           'High-performance enterprise IT agency specializing in Next-Gen Software Engineering, App Store Optimization (ASO), Cloud Architecture, and AI-driven scalable solutions.',
         sameAs: [
@@ -106,20 +105,36 @@ export default function RootLayout({
       },
       {
         '@type': 'ProfessionalService',
-        '@id': 'https://mspulseit.com/#service-aso',
-        name: 'App Store Optimization & Deep Linking Engineering',
+        '@id': 'https://mspulseit.com/#service',
+        name: 'MS Pulse IT — Custom Software Engineering',
         provider: {
           '@id': 'https://mspulseit.com/#organization',
         },
         description:
-          'Full-funnel App-SEO, structured deep-linking with Apple AASA and Android assetlinks, and organic store conversion elevation.',
+          'Full-cycle software engineering: enterprise platforms (CRM/ERP), web & mobile applications, desktop software, real-time media infrastructure, and multi-vendor e-commerce marketplaces.',
       },
       {
         '@type': 'SoftwareApplication',
-        name: 'MS Pulse IT Architecture Suite',
+        name: 'MS Shop',
         applicationCategory: 'BusinessApplication',
-        operatingSystem: 'All',
-        description: 'Integrated cloud telemetry, deep link router, and performance optimization toolkit.',
+        operatingSystem: 'Web',
+        url: 'https://ms-shop.store/',
+        description:
+          'Multi-vendor e-commerce and marketplace engine built and operated by MS Pulse IT — headless storefront, vendor dashboards, split commission payouts, 0.9s load time, 97/100 Lighthouse.',
+        creator: {
+          '@id': 'https://mspulseit.com/#organization',
+        },
+      },
+      {
+        '@type': 'SoftwareApplication',
+        name: 'LiveCore',
+        applicationCategory: 'MultimediaApplication',
+        operatingSystem: 'Web',
+        description:
+          'Broadcast-grade real-time media and streaming server built and operated by MS Pulse IT — self-hosted WebRTC SFU, sub-300ms glass-to-glass latency, zero per-minute SDK fees.',
+        creator: {
+          '@id': 'https://mspulseit.com/#organization',
+        },
       },
     ],
   };

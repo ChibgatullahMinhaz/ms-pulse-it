@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Smartphone, Globe, Cpu, Cloud, ExternalLink, ArrowRight, Play, CheckCircle2, X, Terminal, Code2, Sparkles } from 'lucide-react';
+import { ExternalLink, ArrowRight, Play, CheckCircle2, X, Terminal, Code2, Sparkles } from 'lucide-react';
 import { Tilt3D } from './Tilt3D';
 
 const MS_SHOP_LIVE_URL = 'https://ms-shop.store/';
@@ -52,9 +52,6 @@ const FLAGSHIP_SPECS: FlagshipSpec[] = [
 
 export function FeaturedLabSection({ onOpenConsultation }: { onOpenConsultation: () => void }) {
   const [activeFlagshipSpec, setActiveFlagshipSpec] = useState<FlagshipSpec | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string>('All');
-  const categories = ['All', 'Flutter', 'Full-Stack', 'AI & Python', 'Cloud Infra'];
-
 
   return (
     <section id="featured-lab" className="py-24 bg-white relative border-b border-slate-200/60">
@@ -72,25 +69,8 @@ export function FeaturedLabSection({ onOpenConsultation }: { onOpenConsultation:
               We Don't Just Build for Clients — We Ship Our Own Products
             </h2>
             <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-              Our engineering standards are proven on two production systems we own and operate — <strong className="text-slate-900">MS Shop</strong>, our multi-vendor marketplace engine, and <strong className="text-slate-900">LiveCore</strong>, our broadcast-grade media server — alongside our internal R&D prototypes.
+              Our engineering standards are proven on two production systems we own and operate — <strong className="text-slate-900">MS Shop</strong>, our multi-vendor marketplace engine, and <strong className="text-slate-900">LiveCore</strong>, our broadcast-grade media server.
             </p>
-          </div>
-
-          {/* Category Filter Buttons */}
-          <div className="flex flex-wrap gap-1.5 p-1 bg-slate-100 rounded-xl shrink-0">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] ${
-                  activeCategory === cat
-                    ? 'bg-white text-slate-900 shadow-sm'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
           </div>
         </div>
 
